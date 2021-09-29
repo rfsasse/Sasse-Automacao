@@ -1,0 +1,75 @@
+/*---Resets-----*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*-----Variables-----*/
+
+:root {
+
+  /*Colors*/
+  --hue: 35;
+  /*HSL Color model*/
+  --header-color: hsl(var(--hue) 0% 75%);
+  --base-color: hsl(var(--hue) 97%  52%);
+  --text-color: hsl(var(--hue) 0%  0%);
+  --title-color-gray: hsl(var(--hue) 0%  45%);
+  /*Fontes*/
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+
+  /*header*/
+  --header-height: 4.5rem;
+}
+
+
+/*Layout Global*/
+
+.container {
+  margin-left: 1.5;
+  margin-right: 1.5;
+}
+
+
+.grid {
+  display: grid; /*habilitar novas opçoes de css*/
+  gap: 2rem; /*Fais um expaço por padrão entre os filhos do grid*/
+}
+
+.section {
+  padding: calc(5rem + var(--header-height)) 0; /*primeiro valor vertical segundo valor horisontal*/
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
