@@ -15,12 +15,20 @@ a {
 
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 
 html {
   scroll-behavior: smooth;
+}
+
+
+body {
+  font: 400 1rem var(--body-font);
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
 }
 
 
