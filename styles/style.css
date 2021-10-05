@@ -99,7 +99,7 @@ nav.show .menu {
   opacity: 1;
   visibility: visible;
 
-  background: var(--body-color);
+  
   height: 100vh; /*vh igual view port altura do dispositivo visao total */
   width: 100vw; /*Largura*/
 
@@ -109,6 +109,11 @@ nav.show .menu {
 
   display: grid;
   place-content: center;
+
+
+  background: -webkit-gradient(linear, left top, right top, from(#CCCCCC), to(var(--title-color-gray))) no-repeat;
+  background: -moz-linear-gradient(left, #CCCCCC, #000000);
+  filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
 
 }
 
@@ -146,4 +151,20 @@ nav.show .icon-close {
   top: 1.5rem;
 }
 
+/*Home*/
+#home {
+  background: var(--body-color-gray);
+}
+
+#home .title {
+  text-align: center;
+}
+
+#home .image img{
+  border-radius: 0.75rem;
+}
+
+#home span {
+  margin-left: 1.5rem;
+}
 
