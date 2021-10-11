@@ -19,6 +19,14 @@
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
 }
 
+#header .logo-img img {
+  margin-left: -0.8rem;
+}
+
+#header .logo div {
+  margin-left: -0.8rem;
+}
+
 /*header-logo*/
 
 .logo-img {
@@ -26,7 +34,7 @@
   justify-content: space-around; 
   align-items: center;
   height: var(--header-height);
-  padding: 0.2rem;
+  padding: 0.1rem;
 }
 
 .logo-img span {

@@ -18,3 +18,20 @@ for (const link of links) {
     nav.classList.remove('show')
   })
 }
+
+/*Swiper*/
+
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
+})
