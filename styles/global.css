@@ -44,6 +44,7 @@ body {
   --base-color: hsl(var(--hue) 97%  52%);
   --text-color: hsl(var(--hue) 0%  0%);
   --title-color-gray: hsl(var(--hue) 0%  45%);
+  --text-color-light: hsl(var(--hue) 0%  100%);
   /*Fontes*/
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
@@ -75,13 +76,6 @@ body {
 
 .title {
   font: 800 var(--title-font-size) var(--title-font);
-  
-}
-
-.section .title {
-  margin-bottom: 1rem;
-  font: 800 var(--title-font-size) var(--title-font);
-
 }
 
 
