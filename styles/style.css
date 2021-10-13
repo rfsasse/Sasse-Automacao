@@ -35,6 +35,7 @@
   align-items: center;
   height: var(--header-height);
   padding: 0.1rem;
+  
 }
 
 .logo-img span {
@@ -137,7 +138,7 @@ nav.show ul.grid {
 
 .toggle {
   color: var(--base-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;  /*troca o cursor para mãoZinha*/
 }
 

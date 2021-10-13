@@ -41,7 +41,7 @@ body {
   /*HSL Color model*/
   --header-color: hsl(var(--hue) 0% 75%);
   --body-color-gray:hsl(var(--hue) 0% 95%);
-  --base-color: hsl(var(--hue) 97%  52%);
+  --base-color: hsl(var(--hue) 97%  65%);
   --text-color: hsl(var(--hue) 0%  0%);
   --title-color-gray: hsl(var(--hue) 0%  45%);
   --text-color-light: hsl(var(--hue) 0%  100%);
