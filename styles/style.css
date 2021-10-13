@@ -180,12 +180,9 @@ nav.show .icon-close {
 /*Product*/
 #products {
   background: white;
+  
 }
 
-#products .container {
-  margin-left: 0;
-  margin-right: 0;
-}
 
 #products header {
   margin-left: 1.5rem;
@@ -193,24 +190,28 @@ nav.show .icon-close {
   margin-bottom: 0;  
 } 
 
-.section  #products.section {
+#products.section {
   margin-top: 0;
+  
 } 
 
-#product blockquote {
+#products blockquote {
+  margin-top: 0%;
   padding: 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
+  border: 1px;
+  border-color: #000000;
 }
 
-#testimonials blockquote p {
+#products blockquote p {
   position: relative; /*o p esta segurando a posição absoluta do span abaixo*/
   text-indent: 1.875rem; /*Paragrafo*/
   margin-bottom: 1.5rem;
   color: var(--title-color);
 }
 
-#testimonials blockquote p span {
+#products blockquote p span {
   font: 700 2rem serif;
   position: absolute; /*Position cria uma nova camada*/
   top: -0.375rem; 
@@ -218,19 +219,11 @@ nav.show .icon-close {
   color: var(--base-color);
 }
 
-#testimonials .swiper-pagination {
-  position: relative;
-}
 
-#testimonials cite {
-  display: flex; 
-  align-items: center;
-  font-style: normal;
-}
 
 .swiper-slide {
   height: auto;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem 2rem;
 }
 
 .swiper-pagination-bullet {
@@ -395,8 +388,7 @@ footer .social {
   width: fit-content;
 }
 
-footer .social a {
-  
+footer .social a { 
   transition: 0.3s;
   display: inline-block;
 }
