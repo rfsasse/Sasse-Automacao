@@ -316,12 +316,17 @@ nav.show .icon-close {
   margin-bottom: 2rem;  
 }
 
-#contact div.text a {
+#contact .text div { 
   background: var(--base-color);  
+  padding: 1rem;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
+  border-radius: 0.5rem;
 }
 
-#contact div.text a i {
-  font: 700 2rem var(--text-color-light);
+#contact .text a i {
+  font: 500 1.2rem var(--body-font);
+  color: var(--text-color-light);
 }
 
 #contact .button i,
