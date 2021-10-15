@@ -108,7 +108,6 @@ nav.show .menu {
   opacity: 1;
   visibility: visible;
 
-  
   height: 100vh; /*vh igual view port altura do dispositivo visao total */
   width: 100vw; /*Largura*/
 
@@ -119,11 +118,9 @@ nav.show .menu {
   display: grid;
   place-content: center;
 
-
   background: -webkit-gradient(linear, left top, right top, from(#CCCCCC), to(var(--title-color-gray))) no-repeat;
   background: -moz-linear-gradient(left, #CCCCCC, #000000);
   filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCCCCC', EndColorStr='#000000');
-
 }
 
 nav.show .menu ul {
@@ -319,7 +316,7 @@ nav.show .icon-close {
 }
 
 #contact .text a i {
-  font: 500 1.2rem var(--body-font);
+  font: 500 1rem var(--body-font);
   color: var(--text-color-light);
 }
 
