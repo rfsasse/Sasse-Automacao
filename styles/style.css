@@ -294,9 +294,55 @@ nav.show .icon-close {
   margin-right: 1.5rem;  
 }
 
+/*Adress*/
+
+#adress {
+  
+  background: var(--body-color-gray);
+}
+
+#adress .container {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem; 
+}
+
+
+
+#adress .figure::before {  /*Elemento fantasma*/
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;  /*Posição absoluta dentro da pagina toda*/
+  top: -8.3%;
+  left: -33%;
+  z-index: 0; /*Eixo z profundidade*/
+}
+
+#adress .figure iframe {
+  position: relative; /*habilita novas opçoes pro css*/ 
+}
+
+#adress .figure iframe, 
+#adress .figure::before {
+  border-radius: 0.05rem;
+}
+
+#adress .figure iframe {
+  position: relative; /*habilita novas opçoes pro css*/ 
+}
+
+
+#adress .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem; 
+  
+}
+
+
 /*Contact*/
 #contact {
-  background: var(--body-color-gray);
+  background: white;
 }
 
 #contact .grid {
