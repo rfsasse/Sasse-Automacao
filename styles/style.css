@@ -296,48 +296,66 @@ nav.show .icon-close {
 
 /*Adress*/
 
+
+.map {
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ align-items: center;
+ justify-content: center;
+}
+
+
+/* 
 #adress {
   
   background: var(--body-color-gray);
-}
+} */
 
+/* 
 #adress .container {
   margin-left: 0.5rem;
   margin-right: 0.5rem; 
-}
+} */
 
 
-
-#adress .figure::before {  /*Elemento fantasma*/
+/*
+#adress .figure::before {  
   content: "";
   height: 100%;
   width: 100%;
   background: var(--base-color-second);
-  position: absolute;  /*Posição absoluta dentro da pagina toda*/
+  position: absolute;  
   top: -8.3%;
   left: -33%;
-  z-index: 0; /*Eixo z profundidade*/
-}
+  z-index: 0; 
+} 
 
+*/
+
+/* 
 #adress .figure iframe {
-  position: relative; /*habilita novas opçoes pro css*/ 
-}
+  position: relative; 
+} 
+*/
 
+
+/* 
 #adress .figure iframe, 
 #adress .figure::before {
   border-radius: 0.05rem;
-}
+} */
 
-#adress .figure iframe {
-  position: relative; /*habilita novas opçoes pro css*/ 
-}
+/* #adress .figure iframe {
+  position: relative; 
+} */
 
 
-#adress .text {
+/* #adress .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem; 
   
-}
+} */
 
 
 /*Contact*/
