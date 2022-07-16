@@ -240,9 +240,6 @@ nav.show .icon-close {
   background: white;
 }
 
-#services p.subtitle strong {
-  color: var(--base-color); 
-}
 
 .card {
   padding: 3.625rem 2rem;
