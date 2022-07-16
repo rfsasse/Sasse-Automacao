@@ -134,7 +134,8 @@ nav.show ul.grid {
 /* toggle menu */
 
 .toggle {
-  color: var(--base-color);
+  color: var(--title-color-gray);
+  
   font-size: 2rem;
   cursor: pointer;  /*troca o cursor para mãoZinha*/
 }
@@ -167,7 +168,7 @@ nav.show .icon-close {
 }
 
 #home .image img{
-  border-radius: 0.75rem;
+  border-radius: 0.2rem;
 }
 
 #home span {
@@ -176,7 +177,8 @@ nav.show .icon-close {
 
 /*Product*/
 #products {
-  background: white;
+  
+  background: var(--body-color-gray);
   
 }
 
@@ -235,7 +237,7 @@ nav.show .icon-close {
 /*Serviços*/
 
 #services {
-  background: var(--body-color-gray);
+  background: white;
 }
 
 #services p.subtitle strong {
@@ -258,7 +260,7 @@ nav.show .icon-close {
 /*Sobre*/
 
 #about {
-  background: white;
+  background: var(--body-color-gray);
 }
 
 #about .container {
@@ -294,73 +296,12 @@ nav.show .icon-close {
   margin-right: 1.5rem;  
 }
 
-/*Adress*/
-
-
-.map {
- display: flex;
- flex-direction: column;
- gap: 2rem;
- align-items: center;
- justify-content: center;
-}
-
-
-/* 
-#adress {
-  
-  background: var(--body-color-gray);
-} */
-
-/* 
-#adress .container {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem; 
-} */
-
-
-/*
-#adress .figure::before {  
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: var(--base-color-second);
-  position: absolute;  
-  top: -8.3%;
-  left: -33%;
-  z-index: 0; 
-} 
-
-*/
-
-/* 
-#adress .figure iframe {
-  position: relative; 
-} 
-*/
-
-
-/* 
-#adress .figure iframe, 
-#adress .figure::before {
-  border-radius: 0.05rem;
-} */
-
-/* #adress .figure iframe {
-  position: relative; 
-} */
-
-
-/* #adress .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem; 
-  
-} */
-
 
 /*Contact*/
 #contact {
+  /* background: var(--body-color-gray); */
   background: white;
+  
 }
 
 #contact .grid {
@@ -403,8 +344,18 @@ nav.show .icon-close {
   color: var(--base-color);
 }
 
-/*Footer*/
+/*Adress*/
 
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+
+
+/*Footer*/
 /*---------FOOTER----------*/
 
 footer {
