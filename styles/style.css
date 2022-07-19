@@ -299,6 +299,10 @@ nav.show .icon-close {
 
 .founder {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .founder  img {
