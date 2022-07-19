@@ -295,6 +295,20 @@ nav.show .icon-close {
   margin-right: 1.5rem;  
 }
 
+/*Fundador*/
+
+.founder {
+  margin-top: 1.5rem;
+}
+
+.founder  img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
 
 /*Contact*/
 #contact {
