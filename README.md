@@ -2,6 +2,11 @@
 
 Projeto que será desenvolvido para cliente, web site desenvolvido em html, css, js
 
+## Contatos do site
+
+WhatsApp, telefone e e-mail ficam em `scripts/config.js`.
+Deixe um campo vazio (`''`) para esconder o item; valores em formato inválido também são escondidos.
+
 
 Trabalhando No projeto Sasse automações
 
