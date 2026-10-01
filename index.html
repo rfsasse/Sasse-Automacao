@@ -8,7 +8,7 @@
       name="description"
       content="Automação industrial e manutenção eletroeletrônica em Jaraguá do Sul - SC desde 2009. Painéis elétricos, retrofit, esteiras e automação de máquinas. Solicite um orçamento."
     />
-    <meta name="theme-color" content="#fcb44f" />
+    <meta name="theme-color" content="#262626" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!--Compartilhamento em redes sociais-->
@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -46,11 +46,34 @@
     <!--Styles-->
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <!--Sem JavaScript as portas nao aparecem-->
+    <noscript>
+      <style>
+        .doors {
+          display: none;
+        }
+      </style>
+    </noscript>
     <!-- Fim Cabeçalho -->
   </head>
 
   <body>
-    <header id="header">
+    <!--Portas de automação (abertura do site)-->
+    <div class="doors" aria-hidden="true">
+      <div class="door door-left"></div>
+      <div class="door door-right"></div>
+      <div class="doors-lock">
+        <div class="doors-emblem">
+          <img src="./images/logo.webp" alt="" width="93" height="81" />
+        </div>
+        <p class="doors-hint">
+          <span class="hint-mouse">Mova o mouse para entrar</span>
+          <span class="hint-touch">Toque para entrar</span>
+        </p>
+      </div>
+    </div>
+
+    <header id="header" class="glass">
       <nav class="container" aria-label="Menu principal">
         <a href="#home" class="logo" aria-label="Sasse Automação - início">
           <img
@@ -71,8 +94,8 @@
           </span>
         </a>
 
-        <div class="menu" id="menu">
-          <ul class="grid">
+        <div class="menu glass" id="menu">
+          <ul>
             <li><a href="#home">Início</a></li>
             <li><a href="#products">Produtos</a></li>
             <li><a href="#services">Serviços</a></li>
@@ -99,47 +122,76 @@
     <main>
       <!--Home-->
       <section class="section" id="home">
-        <div class="container grid">
-          <div class="video">
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              controls
-              preload="metadata"
-              width="576"
-              height="640"
-              poster="./video/corte-debrum-poster.webp"
-              aria-label="Máquina de corte de debrum em funcionamento"
-            >
-              <source src="./video/corte-debrum-otimizado.mp4" type="video/mp4" />
-              <p>Seu navegador não suporta vídeos.</p>
-            </video>
-          </div>
-
+        <div class="container home-grid">
           <div class="text">
-            <p class="eyebrow">Jaraguá do Sul - SC · desde 2009</p>
-            <h1 class="title">
-              Automação industrial e manutenção eletroeletrônica
+            <p class="pill glass">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Jaraguá do Sul - SC · desde 2009
+            </p>
+            <h1 class="hero-title">
+              Automação <span class="highlight">industrial</span> e manutenção
+              eletroeletrônica
             </h1>
-            <p>
+            <p class="lead">
               Desenvolvemos soluções de automação para indústrias de diferentes
               portes. Com tecnologia e inovação aplicadas à produção, ajudamos
               nossos clientes a aumentar a produtividade e a acelerar o retorno
               do investimento.
             </p>
-            <a href="#contact" class="button">Solicite um orçamento</a>
+            <a href="#contact" class="button glow">
+              Solicite um orçamento
+              <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="home-media">
+            <div class="video glass frame">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                preload="metadata"
+                width="576"
+                height="640"
+                poster="./video/corte-debrum-poster.webp"
+                aria-label="Máquina de corte de debrum em funcionamento"
+              >
+                <source
+                  src="./video/corte-debrum-otimizado.mp4"
+                  type="video/mp4"
+                />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="badge glass" aria-hidden="true">
+              <span class="icon-box">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                  <path
+                    d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"
+                  />
+                </svg>
+              </span>
+              <span>
+                <strong>Desde 2009</strong>
+                <small>Jaraguá do Sul - SC</small>
+              </span>
+            </div>
           </div>
         </div>
       </section>
-      <div class="divider-1"></div>
 
       <!--Produtos-->
       <section class="section" id="products">
         <div class="container">
-          <header>
-            <h2 class="title">Produtos</h2>
+          <header class="section-header">
+            <h2 class="section-title glass">Produtos</h2>
             <p class="subtitle">
               Conheça alguns dos projetos que desenvolvemos para a indústria.
             </p>
@@ -147,202 +199,271 @@
 
           <div class="swiper">
             <div class="swiper-wrapper">
-              <figure class="product swiper-slide">
-                <h3>Painel elétrico</h3>
-                <img
-                  src="./images/maquina-1.webp"
-                  alt="Painel elétrico de automação montado"
-                  width="312"
-                  height="384"
-                  loading="lazy"
-                />
-                <figcaption>Montagem de painéis elétricos para a automação de máquinas e processos.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/maquina-1.webp"
+                    alt="Painel elétrico de automação montado"
+                    width="312"
+                    height="384"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Painel elétrico</h3>
+                  <p>
+                    Montagem de painéis elétricos para a automação de máquinas e
+                    processos.
+                  </p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Empacotadeira</h3>
-                <img
-                  src="./images/maquina-2.webp"
-                  alt="Máquina empacotadeira de alimentos"
-                  width="309"
-                  height="358"
-                  loading="lazy"
-                />
-                <figcaption>Automação de máquina empacotadeira para a indústria alimentícia.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/maquina-2.webp"
+                    alt="Máquina empacotadeira de alimentos"
+                    width="309"
+                    height="358"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Empacotadeira</h3>
+                  <p>
+                    Automação de máquina empacotadeira para a indústria
+                    alimentícia.
+                  </p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Projeto elétrico</h3>
-                <img
-                  src="./images/painel2.webp"
-                  alt="Painel com esquema elétrico de automação completa"
-                  width="213"
-                  height="416"
-                  loading="lazy"
-                />
-                <figcaption>Projeto e montagem de painel para automação completa do equipamento.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel2.webp"
+                    alt="Painel com esquema elétrico de automação completa"
+                    width="213"
+                    height="416"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Projeto elétrico</h3>
+                  <p>
+                    Projeto e montagem de painel para automação completa do
+                    equipamento.
+                  </p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Retrofit de painéis</h3>
-                <img
-                  src="./images/painel3.webp"
-                  alt="Retrofit de painel elétrico - exemplo 1"
-                  width="425"
-                  height="353"
-                  loading="lazy"
-                />
-                <figcaption>Modernização de painéis elétricos existentes.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel3.webp"
+                    alt="Retrofit de painel elétrico - exemplo 1"
+                    width="425"
+                    height="353"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Retrofit de painéis</h3>
+                  <p>Modernização de painéis elétricos existentes.</p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Retrofit de painéis</h3>
-                <img
-                  src="./images/painel5.webp"
-                  alt="Retrofit de painel elétrico - exemplo 2"
-                  width="326"
-                  height="443"
-                  loading="lazy"
-                />
-                <figcaption>Substituição de componentes e reorganização do painel.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel5.webp"
+                    alt="Retrofit de painel elétrico - exemplo 2"
+                    width="326"
+                    height="443"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Retrofit de painéis</h3>
+                  <p>Substituição de componentes e reorganização do painel.</p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Retrofit de painéis</h3>
-                <img
-                  src="./images/painel6.webp"
-                  alt="Retrofit de painel elétrico - exemplo 3"
-                  width="328"
-                  height="440"
-                  loading="lazy"
-                />
-                <figcaption>Adequação do painel às novas necessidades da produção.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel6.webp"
+                    alt="Retrofit de painel elétrico - exemplo 3"
+                    width="328"
+                    height="440"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Retrofit de painéis</h3>
+                  <p>Adequação do painel às novas necessidades da produção.</p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Retrofit de painéis</h3>
-                <img
-                  src="./images/painel7.webp"
-                  alt="Retrofit de painel elétrico - exemplo 4"
-                  width="332"
-                  height="436"
-                  loading="lazy"
-                />
-                <figcaption>Atualização do painel com componentes atuais e confiáveis.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel7.webp"
+                    alt="Retrofit de painel elétrico - exemplo 4"
+                    width="332"
+                    height="436"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Retrofit de painéis</h3>
+                  <p>Atualização do painel com componentes atuais e confiáveis.</p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Esteiras transportadoras</h3>
-                <img
-                  src="./images/painel9.webp"
-                  alt="Painel de controle de esteira de produção"
-                  width="272"
-                  height="393"
-                  loading="lazy"
-                />
-                <figcaption>Automação de esteiras para o transporte entre as etapas da produção.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/painel9.webp"
+                    alt="Painel de controle de esteira de produção"
+                    width="272"
+                    height="393"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Esteiras transportadoras</h3>
+                  <p>
+                    Automação de esteiras para o transporte entre as etapas da
+                    produção.
+                  </p>
+                </figcaption>
               </figure>
 
-              <figure class="product swiper-slide">
-                <h3>Esteiras transportadoras</h3>
-                <img
-                  src="./images/esteira.webp"
-                  alt="Esteira transportadora em funcionamento"
-                  width="312"
-                  height="420"
-                  loading="lazy"
-                />
-                <figcaption>Automação de esteiras para o transporte entre as etapas da produção.</figcaption>
+              <figure class="product swiper-slide glass">
+                <div class="product-media">
+                  <img
+                    src="./images/esteira.webp"
+                    alt="Esteira transportadora em funcionamento"
+                    width="312"
+                    height="420"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <h3>Esteiras transportadoras</h3>
+                  <p>
+                    Automação de esteiras para o transporte entre as etapas da
+                    produção.
+                  </p>
+                </figcaption>
               </figure>
             </div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
-      <div class="divider-2"></div>
 
       <!--Serviços-->
       <section class="section" id="services">
-        <div class="container grid">
-          <header>
-            <h2 class="title">Serviços</h2>
-            <p class="subtitle">
+        <div class="container">
+          <header class="services-header glass">
+            <h2 class="eyebrow">Serviços</h2>
+            <p>
               Desde 2009, a <strong>Sasse Automação</strong> é especializada em
               automação industrial e manutenção eletroeletrônica, atendendo
               empresas de diferentes portes e segmentos.
             </p>
           </header>
 
-          <div class="cards grid">
-            <article class="card">
-              <img
-                src="./images/painel8.webp"
-                alt=""
-                width="332"
-                height="436"
-                loading="lazy"
-              />
-              <h3 class="title">Automação industrial</h3>
+          <div class="cards">
+            <article class="card glass">
+              <span class="icon-box icon-box-lg">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </span>
+              <h3>Automação industrial</h3>
               <p>
                 Modernizamos máquinas e equipamentos com tecnologia de
                 automação para elevar o desempenho e a produtividade da sua
                 linha de produção.
               </p>
+              <div class="card-media">
+                <img
+                  src="./images/painel8.webp"
+                  alt=""
+                  width="332"
+                  height="436"
+                  loading="lazy"
+                />
+              </div>
             </article>
 
-            <article class="card">
-              <img
-                src="./images/manut-eletroeletronica.webp"
-                alt=""
-                width="273"
-                height="228"
-                loading="lazy"
-              />
-              <h3 class="title">Manutenção eletroeletrônica</h3>
+            <article class="card glass">
+              <span class="icon-box icon-box-lg icon-box-neutral">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              </span>
+              <h3>Manutenção eletroeletrônica</h3>
               <p>
                 Diagnóstico e reparo de equipamentos com defeito ou mau
                 funcionamento, com substituição de componentes obsoletos para
                 prolongar a vida útil do seu parque industrial.
               </p>
+              <div class="card-media">
+                <img
+                  src="./images/manut-eletroeletronica.webp"
+                  alt=""
+                  width="273"
+                  height="228"
+                  loading="lazy"
+                />
+              </div>
             </article>
           </div>
         </div>
       </section>
-      <div class="divider-1"></div>
 
       <!--Sobre-->
       <section class="section" id="about">
-        <div class="container grid">
+        <div class="container about-grid">
           <div class="text">
-            <h2 class="title">Sobre nós</h2>
+            <h2 class="big-title">Sobre <span class="highlight">nós</span></h2>
             <p>
-              Fundada em 2009 por Gabriel Henrique Sasse, em Jaraguá do Sul -
-              SC, a <strong>Sasse Automação</strong> atua em eletroeletrônica e
-              na automação de máquinas e equipamentos.
+              Fundada em 2009 por Gabriel Henrique Sasse, em
+              <span class="emphasis">Jaraguá do Sul - SC</span>, a
+              <strong>Sasse Automação</strong> atua em eletroeletrônica e na
+              automação de máquinas e equipamentos.
             </p>
             <p>
               Ao longo dessa trajetória, agregamos valor a empresas de
               diferentes portes e segmentos, entregando soluções que tornam a
               produção mais eficiente e confiável.
             </p>
-            <img
-              src="./images/imagen-externa.webp"
-              alt="Fachada da Sasse Automação"
-              width="870"
-              height="491"
-              loading="lazy"
-              class="about-image"
-            />
+            <div class="glass frame about-frame">
+              <img
+                src="./images/imagen-externa.webp"
+                alt="Fachada da Sasse Automação"
+                width="870"
+                height="491"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <article class="founder">
-            <img
-              src="./images/Gabriel.webp"
-              alt="Foto de Gabriel Henrique Sasse"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
+          <article class="founder glass">
+            <div class="avatar">
+              <img
+                src="./images/Gabriel.webp"
+                alt="Foto de Gabriel Henrique Sasse"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+            </div>
             <h3>Gabriel Henrique Sasse</h3>
             <p class="role">Fundador</p>
             <p>
@@ -354,28 +475,38 @@
               href="https://www.linkedin.com/in/gabriel-henrique-sasse-880453a2"
               target="_blank"
               rel="noopener noreferrer"
-              class="founder-link"
+              class="button-outline"
             >
               Conheça o perfil no LinkedIn
             </a>
           </article>
         </div>
       </section>
-      <div class="divider-2"></div>
 
       <!--Contatos-->
       <section class="section" id="contact">
-        <div class="container grid">
+        <div class="container contact-grid">
           <div class="text">
-            <h2 class="title">Vamos conversar sobre o seu projeto?</h2>
-            <p>
-              Solicite um orçamento ou agende uma visita técnica. Retornamos
-              o contato para entender a necessidade da sua empresa.
+            <span class="icon-box icon-box-xl glass" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z" />
+                <path
+                  d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"
+                />
+              </svg>
+            </span>
+            <h2 class="big-title">
+              Vamos conversar sobre
+              <span class="highlight">o seu projeto?</span>
+            </h2>
+            <p class="lead">
+              Solicite um orçamento ou agende uma visita técnica. Retornamos o
+              contato para entender a necessidade da sua empresa.
             </p>
             <!--Link preenchido pelo scripts/config.js-->
             <a
               id="whatsapp-link"
-              class="button"
+              class="button glow button-lg"
               href="#contact"
               target="_blank"
               rel="noopener noreferrer"
@@ -386,22 +517,37 @@
             </a>
           </div>
 
-          <div class="links">
+          <div class="links glass">
             <!--Telefone e e-mail preenchidos pelo scripts/config.js-->
-            <ul class="grid">
+            <ul>
+              <li>
+                <span class="icon-box" aria-hidden="true">
+                  <i class="icon-map-pin"></i>
+                </span>
+                <div>
+                  <h3>Localização</h3>
+                  <address>
+                    R. Waldemar Gumz - Vila Chartres, Jaraguá do Sul - SC
+                  </address>
+                </div>
+              </li>
               <li id="contact-phone" hidden>
-                <i class="icon-phone" aria-hidden="true"></i>
-                <a href="#contact"></a>
+                <span class="icon-box" aria-hidden="true">
+                  <i class="icon-phone"></i>
+                </span>
+                <div>
+                  <h3>Telefone</h3>
+                  <a href="#contact"></a>
+                </div>
               </li>
               <li id="contact-email" hidden>
-                <i class="icon-mail" aria-hidden="true"></i>
-                <a href="#contact"></a>
-              </li>
-              <li>
-                <i class="icon-map-pin" aria-hidden="true"></i>
-                <address>
-                  R. Waldemar Gumz - Vila Chartres, Jaraguá do Sul - SC
-                </address>
+                <span class="icon-box" aria-hidden="true">
+                  <i class="icon-mail"></i>
+                </span>
+                <div>
+                  <h3>E-mail</h3>
+                  <a href="#contact"></a>
+                </div>
               </li>
             </ul>
 
@@ -417,14 +563,21 @@
           </div>
         </div>
       </section>
-      <div class="divider-1"></div>
     </main>
 
     <!--Rodapé-->
-    <footer class="section">
-      <div class="container grid">
-        <div class="brand">
-          <div class="brand-logo">
+    <footer>
+      <div class="container footer-row">
+        <a href="#home" class="logo" aria-label="Sasse Automação - início">
+          <img
+            src="./images/logo.webp"
+            alt=""
+            width="93"
+            height="81"
+            class="logo-icon"
+            loading="lazy"
+          />
+          <span class="logo-text">
             <img
               src="./images/logo-sasse.webp"
               alt="Sasse"
@@ -433,13 +586,19 @@
               loading="lazy"
             />
             <span>automação</span>
-          </div>
+          </span>
+        </a>
+
+        <div class="copyright">
           <p>Automação industrial e manutenção eletroeletrônica.</p>
-          <p>© <span id="year">2025</span> Sasse Automação. Todos os direitos reservados.</p>
+          <p>
+            © <span id="year">2025</span> Sasse Automação. Todos os direitos
+            reservados.
+          </p>
         </div>
 
         <!-- Comentado enquanto não utilizado redes sociais
-        <div class="social grid">
+        <div class="social">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="icon-instagram" aria-hidden="true"></i>
           </a>
@@ -455,7 +614,7 @@
     </footer>
 
     <!--Voltar ao topo-->
-    <a href="#home" class="back-to-top" aria-label="Voltar ao topo">
+    <a href="#home" class="back-to-top glass" aria-label="Voltar ao topo">
       <i class="icon-arrow-up" aria-hidden="true"></i>
     </a>
 
@@ -474,6 +633,7 @@
       defer
     ></script>
 
+    <script src="./scripts/doors.js" defer></script>
     <script src="./scripts/config.js" defer></script>
     <script src="./scripts/main.js" defer></script>
   </body>

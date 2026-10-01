@@ -117,10 +117,21 @@ function backToTop() {
 
 /*Swiper*/
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 if (typeof Swiper !== 'undefined') {
-  new Swiper('.swiper', {
+  const productsSwiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 24,
+    loop: true, /*depois do ultimo volta pro primeiro*/
+    /*passa sozinho a cada 3s; para com o mouse em cima e volta ao tirar*/
+    autoplay: reduceMotion
+      ? false
+      : {
+          delay: 3000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false
+        },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
@@ -135,11 +146,17 @@ if (typeof Swiper !== 'undefined') {
       }
     }
   })
+
+  /*tambem para quando o usuario navega pelo teclado dentro do carrossel*/
+  const productsCarousel = document.querySelector('#products .swiper')
+
+  if (productsSwiper.autoplay && productsSwiper.params.autoplay) {
+    productsCarousel.addEventListener('focusin', () => productsSwiper.autoplay.stop())
+    productsCarousel.addEventListener('focusout', () => productsSwiper.autoplay.start())
+  }
 }
 
 /*ScrollReveal (desligado para quem prefere menos animação)*/
-
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 if (typeof ScrollReveal !== 'undefined' && !reduceMotion) {
   const scrollReveal = ScrollReveal({
@@ -150,12 +167,12 @@ if (typeof ScrollReveal !== 'undefined' && !reduceMotion) {
   })
 
   scrollReveal.reveal(
-    `#home .video, #home .text,
+    `#home .text, #home .home-media,
+    #products .section-header, #products .swiper,
+    #services .services-header, #services .cards,
     #about .text, #about .founder,
-    #services header, #services .card,
-    #products header, #products .swiper,
     #contact .text, #contact .links,
-    footer .brand`,
+    footer .footer-row`,
     { interval: 100 }
   )
 }
