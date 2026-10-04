@@ -148,11 +148,105 @@ if (typeof Swiper !== 'undefined') {
   })
 
   /*tambem para quando o usuario navega pelo teclado dentro do carrossel*/
-  const productsCarousel = document.querySelector('#products .swiper')
+  const productsCarousel = document.querySelector('#projects .swiper')
 
   if (productsSwiper.autoplay && productsSwiper.params.autoplay) {
     productsCarousel.addEventListener('focusin', () => productsSwiper.autoplay.stop())
     productsCarousel.addEventListener('focusout', () => productsSwiper.autoplay.start())
+  }
+}
+
+/*Videos que tocam so quando aparecem na tela (economiza internet)*/
+
+const inViewVideos = document.querySelectorAll('video.autoplay-in-view')
+
+if ('IntersectionObserver' in window && !reduceMotion) {
+  const videoObserver = new IntersectionObserver(
+    function (entries) {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(function () {}) /*navegador pode bloquear; fica o botao de play*/
+        } else {
+          entry.target.pause()
+        }
+      }
+    },
+    { threshold: 0.4 }
+  )
+
+  for (const video of inViewVideos) {
+    videoObserver.observe(video)
+  }
+}
+
+/*Recortes de projetos no topo: tocam um depois do outro (estilo stories)*/
+
+const reel = document.querySelector('.reel')
+const reelVideo = document.querySelector('.reel-video')
+
+if (reel && reelVideo) {
+  const clips = (reelVideo.dataset.clips || '')
+    .split(',')
+    .map(clip => clip.trim())
+    .filter(Boolean)
+  const reelProgress = reel.querySelector('.reel-progress')
+  const reelToggle = reel.querySelector('.reel-toggle')
+  let currentClip = 0
+
+  /*uma barrinha de progresso para cada recorte*/
+  const bars = clips.map(function () {
+    const item = document.createElement('li')
+    item.appendChild(document.createElement('span'))
+    reelProgress.appendChild(item)
+    return item
+  })
+
+  function setPaused(paused) {
+    reel.classList.toggle('is-paused', paused)
+    reelToggle.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo')
+  }
+
+  function playClip(index, autoplay) {
+    currentClip = index
+    bars.forEach(function (bar, i) {
+      bar.classList.toggle('done', i < index)
+      bar.firstChild.style.width = ''
+    })
+    reelVideo.src = clips[index]
+    reelVideo.loop = clips.length === 1
+
+    if (autoplay) {
+      reelVideo.play().catch(function () {
+        setPaused(true) /*navegador bloqueou o autoplay*/
+      })
+    }
+  }
+
+  reelVideo.addEventListener('timeupdate', function () {
+    if (!reelVideo.duration) return
+    const percent = (reelVideo.currentTime / reelVideo.duration) * 100
+    bars[currentClip].firstChild.style.width = `${percent}%`
+  })
+
+  reelVideo.addEventListener('ended', function () {
+    playClip((currentClip + 1) % clips.length, true)
+  })
+
+  reelVideo.addEventListener('play', () => setPaused(false))
+  reelVideo.addEventListener('pause', () => setPaused(true))
+
+  function togglePlay() {
+    if (reelVideo.paused) reelVideo.play()
+    else reelVideo.pause()
+  }
+
+  reelToggle.addEventListener('click', togglePlay)
+  reelVideo.addEventListener('click', togglePlay)
+
+  if (clips.length) {
+    /*quem prefere menos movimento comeca pausado*/
+    playClip(0, !reduceMotion)
+    if (reduceMotion) setPaused(true)
   }
 }
 
@@ -168,7 +262,7 @@ if (typeof ScrollReveal !== 'undefined' && !reduceMotion) {
 
   scrollReveal.reveal(
     `#home .text, #home .home-media,
-    #products .section-header, #products .swiper,
+    #projects .section-header, #projects .feature, #projects .swiper,
     #services .services-header, #services .cards,
     #about .text, #about .founder,
     #contact .text, #contact .links,

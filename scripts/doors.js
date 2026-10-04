@@ -2,7 +2,7 @@
 
 {
   const doors = document.querySelector('.doors')
-  const IDLE_TIME = 30000 /*30s sem mexer fecha as portas*/
+  const IDLE_TIME = 5 * 60 * 1000 /*5 minutos sem mexer fecha as portas*/
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   if (doors && reduceMotion) {

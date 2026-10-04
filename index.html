@@ -97,7 +97,7 @@
         <div class="menu glass" id="menu">
           <ul>
             <li><a href="#home">Início</a></li>
-            <li><a href="#products">Produtos</a></li>
+            <li><a href="#projects">Projetos</a></li>
             <li><a href="#services">Serviços</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#contact">Contato</a></li>
@@ -147,25 +147,40 @@
           </div>
 
           <div class="home-media">
-            <div class="video glass frame">
+            <!--
+              Recortes curtos de projetos, tocam em sequencia (scripts/main.js).
+              Para trocar: edite a lista em data-clips, separando por virgula.
+            -->
+            <div
+              class="reel glass frame"
+              role="group"
+              aria-label="Recortes de projetos da Sasse Automação"
+            >
               <video
-                autoplay
+                class="reel-video"
                 muted
-                loop
                 playsinline
-                controls
                 preload="metadata"
-                width="576"
-                height="640"
-                poster="./video/corte-debrum-poster.webp"
-                aria-label="Máquina de corte de debrum em funcionamento"
+                width="432"
+                height="540"
+                poster="./video/reel-poster.webp"
+                data-clips="./video/mini-balanca-alimentos.mp4, ./video/mini-rejeicao-batata.mp4, ./video/mini-balanca-parafusos.mp4, ./video/mini-balanca-esteira.mp4, ./video/mini-corte-debrum.mp4, ./video/mini-empacotadora.mp4"
               >
-                <source
-                  src="./video/corte-debrum-otimizado.mp4"
-                  type="video/mp4"
-                />
                 <p>Seu navegador não suporta vídeos.</p>
               </video>
+              <ol class="reel-progress" aria-hidden="true"></ol>
+              <button
+                type="button"
+                class="reel-toggle"
+                aria-label="Pausar vídeo"
+              >
+                <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5v14M15 5v14" />
+                </svg>
+                <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 4l13 8-13 8z" />
+                </svg>
+              </button>
             </div>
 
             <div class="badge glass" aria-hidden="true">
@@ -187,16 +202,323 @@
         </div>
       </section>
 
-      <!--Produtos-->
-      <section class="section" id="products">
+      <!--Projetos-->
+      <section class="section" id="projects">
         <div class="container">
           <header class="section-header">
-            <h2 class="section-title glass">Produtos</h2>
+            <h2 class="section-title glass">Projetos</h2>
             <p class="subtitle">
               Conheça alguns dos projetos que desenvolvemos para a indústria.
             </p>
           </header>
 
+          <!--Para incluir um projeto: copie um <article> abaixo e troque o vídeo e os textos-->
+          <!--Projeto: Empacotadora vertical-->
+          <article class="feature glass">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="432"
+                height="768"
+                poster="./video/empacotadora-poster.webp"
+                aria-label="Empacotadora vertical embalando pipoca doce"
+              >
+                <source src="./video/empacotadora.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Empacotadora vertical</h3>
+              <p>
+                Empacotadora em operação em uma linha de pipoca doce. O equipamento trabalha de forma contínua e automática, desde a bobina de filme até o pacote pronto na esteira de saída.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Formação da embalagem</strong>
+                  <span>O filme plástico sai da bobina e é moldado em tubo.</span>
+                </li>
+                <li>
+                  <strong>Enchimento</strong>
+                  <span>O produto desce pelo funil para dentro da embalagem.</span>
+                </li>
+                <li>
+                  <strong>Selagem e corte</strong>
+                  <span>As garras fecham e separam cada pacote.</span>
+                </li>
+                <li>
+                  <strong>Controle pela IHM</strong>
+                  <span>A operação é acompanhada e ajustada na tela touch.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Projeto: Balança de checagem de peso-->
+          <article class="feature glass feature-reverse feature-wide">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="960"
+                height="540"
+                poster="./video/balanca-checagem-alimentos-poster.webp"
+                aria-label="Balança de checagem de peso com tela da Sasse Automação"
+              >
+                <source src="./video/balanca-checagem-alimentos.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Balança de checagem de peso</h3>
+              <p>
+                Sistema de checagem de peso para pacotes de alimentos, com tela touch personalizada com a marca Sasse. Cada pacote é pesado sobre a esteira e, se estiver fora do peso, é retirado da linha automaticamente.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Pesagem na esteira</strong>
+                  <span>O pacote passa pela balança e o peso aparece na tela.</span>
+                </li>
+                <li>
+                  <strong>Receitas e tara</strong>
+                  <span>O operador escolhe a receita e faz a tara da balança pela IHM.</span>
+                </li>
+                <li>
+                  <strong>Rejeição automática</strong>
+                  <span>Um empurrador pneumático retira os pacotes fora do peso.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Projeto: Checagem de peso de parafusos-->
+          <article class="feature glass">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="432"
+                height="772"
+                poster="./video/balanca-checagem-parafusos-poster.webp"
+                aria-label="Balança de checagem de pacotes de parafusos"
+              >
+                <source src="./video/balanca-checagem-parafusos.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Checagem de peso de parafusos</h3>
+              <p>
+                Balança de checagem instalada na saída da empacotadora de parafusos. Os pacotes passam pela esteira, são pesados e os que estão fora do peso são desviados da linha.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Integração com a empacotadora</strong>
+                  <span>Os pacotes chegam direto da máquina de embalar.</span>
+                </li>
+                <li>
+                  <strong>Indicadores de produção</strong>
+                  <span>A tela mostra a velocidade em pacotes por minuto, os pacotes bons, os rejeitados e a produção total.</span>
+                </li>
+                <li>
+                  <strong>Desvio dos rejeitados</strong>
+                  <span>Os pacotes fora do peso são separados automaticamente.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Projeto: Rejeição de pacotes de batata-->
+          <article class="feature glass feature-reverse">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="432"
+                height="762"
+                poster="./video/balanca-rejeicao-batata-poster.webp"
+                aria-label="Balança com rejeição de pacotes de batata"
+              >
+                <source src="./video/balanca-rejeicao-batata.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Rejeição de pacotes de batata</h3>
+              <p>
+                Balança de checagem para pacotes de batata. Os pacotes com peso fora da faixa definida são identificados e retirados da esteira automaticamente.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Pesagem contínua</strong>
+                  <span>Cada pacote é pesado enquanto passa pela esteira.</span>
+                </li>
+                <li>
+                  <strong>Indicação na tela</strong>
+                  <span>O resultado da pesagem aparece na IHM.</span>
+                </li>
+                <li>
+                  <strong>Rejeição</strong>
+                  <span>Os pacotes reprovados saem da linha sem parar a produção.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Projeto: Esteira elevatória com balança de checagem-->
+          <article class="feature glass">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="432"
+                height="762"
+                poster="./video/balanca-esteira-elevatoria-poster.webp"
+                aria-label="Esteira elevatória levando pacotes até a balança de checagem"
+              >
+                <source src="./video/balanca-esteira-elevatoria.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Esteira elevatória com balança de checagem</h3>
+              <p>
+                Os pacotes saem da empacotadora, sobem por uma esteira elevatória e passam pela balança de checagem. A tela muda de cor para indicar o resultado de cada pesagem.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Transporte</strong>
+                  <span>A esteira com taliscas leva os pacotes até a balança.</span>
+                </li>
+                <li>
+                  <strong>Pesagem</strong>
+                  <span>Cada pacote é pesado individualmente.</span>
+                </li>
+                <li>
+                  <strong>Sinalização</strong>
+                  <span>A tela fica verde para peso aprovado e vermelha para fora do peso.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Projeto: Corte de debrum-->
+          <article class="feature glass feature-reverse">
+            <div class="feature-media">
+              <video
+                class="autoplay-in-view"
+                muted
+                loop
+                playsinline
+                controls
+                preload="none"
+                width="576"
+                height="640"
+                poster="./video/corte-debrum-poster.webp"
+                aria-label="Máquina de corte de debrum em funcionamento"
+              >
+                <source src="./video/corte-debrum-otimizado.mp4" type="video/mp4" />
+                <p>Seu navegador não suporta vídeos.</p>
+              </video>
+            </div>
+
+            <div class="feature-text">
+              <h3>Corte de debrum</h3>
+              <p>
+                Máquina para o corte de rolos de debrum. Um rolo largo de fita é dividido em vários rolos mais estreitos de forma automática, prontos para o uso.
+              </p>
+
+              <ol class="feature-steps">
+                <li>
+                  <strong>Fixação do rolo</strong>
+                  <span>O rolo de debrum é encaixado no eixo da máquina.</span>
+                </li>
+                <li>
+                  <strong>Corte</strong>
+                  <span>O rolo gira e é cortado em faixas mais estreitas.</span>
+                </li>
+                <li>
+                  <strong>Rolos prontos</strong>
+                  <span>Saem vários rolos menores na largura desejada.</span>
+                </li>
+              </ol>
+
+              <a href="#contact" class="button glow">
+                Quero automatizar minha linha
+                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!--Galeria de fotos-->
+          <h3 class="gallery-title">Mais projetos</h3>
           <div class="swiper">
             <div class="swiper-wrapper">
               <figure class="product swiper-slide glass">
