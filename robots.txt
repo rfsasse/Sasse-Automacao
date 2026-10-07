@@ -1,0 +1,5 @@
+# Permite que todos os buscadores leiam o site
+User-agent: *
+Allow: /
+
+Sitemap: https://rfsasse.github.io/Sasse-Automacao/sitemap.xml

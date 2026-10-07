@@ -6,7 +6,7 @@
     <title>Sasse Automação | Automação industrial em Jaraguá do Sul - SC</title>
     <meta
       name="description"
-      content="Automação industrial e manutenção eletroeletrônica em Jaraguá do Sul - SC desde 2009. Painéis elétricos, retrofit, esteiras e automação de máquinas. Solicite um orçamento."
+      content="Automação industrial e manutenção eletroeletrônica e mecânica em Jaraguá do Sul - SC desde 2009. Balanças de checagem, empacotadoras e painéis elétricos."
     />
     <meta name="theme-color" content="#262626" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -16,10 +16,60 @@
     <meta property="og:title" content="Sasse Automação" />
     <meta
       property="og:description"
-      content="Automação industrial e manutenção eletroeletrônica em Jaraguá do Sul - SC desde 2009."
+      content="Automação industrial e manutenção eletroeletrônica e mecânica em Jaraguá do Sul - SC desde 2009."
     />
-    <meta property="og:image" content="./images/imagen-externa.webp" />
+    <meta property="og:url" content="https://rfsasse.github.io/Sasse-Automacao/" />
+    <meta property="og:site_name" content="Sasse Automação" />
+    <meta property="og:image" content="https://rfsasse.github.io/Sasse-Automacao/images/imagen-externa.webp" />
+    <meta property="og:image:width" content="870" />
+    <meta property="og:image:height" content="491" />
+    <meta property="og:image:alt" content="Fachada da Sasse Automação" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="pt_BR" />
+
+    <!--Endereco oficial da pagina (evita conteudo duplicado no Google)-->
+    <link rel="canonical" href="https://rfsasse.github.io/Sasse-Automacao/" />
+
+    <!--Dados estruturados: ajudam o Google a mostrar a empresa nas buscas e no mapa-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://rfsasse.github.io/Sasse-Automacao/#empresa",
+        "name": "Sasse Automação",
+        "description": "Automação industrial e manutenção eletroeletrônica e mecânica em Jaraguá do Sul - SC desde 2009. Balanças de checagem, empacotadoras e painéis elétricos.",
+        "url": "https://rfsasse.github.io/Sasse-Automacao/",
+        "logo": "https://rfsasse.github.io/Sasse-Automacao/images/logo.webp",
+        "image": "https://rfsasse.github.io/Sasse-Automacao/images/imagen-externa.webp",
+        "foundingDate": "2009",
+        "founder": {
+          "@type": "Person",
+          "name": "Gabriel Henrique Sasse",
+          "sameAs": "https://www.linkedin.com/in/gabriel-henrique-sasse-880453a2"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Waldemar Gumz - Vila Chartres",
+          "addressLocality": "Jaraguá do Sul",
+          "addressRegion": "SC",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -26.416384,
+          "longitude": -49.110874
+        },
+        "areaServed": "BR",
+        "knowsAbout": [
+          "Automação industrial",
+          "Manutenção eletroeletrônica",
+          "Manutenção mecânica",
+          "Balança de checagem de peso (checkweigher)",
+          "Empacotadora vertical",
+          "Painéis elétricos"
+        ]
+      }
+    </script>
 
     <!--Favicon-->
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
@@ -27,10 +77,14 @@
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--carrega sem travar a abertura da pagina-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" /></noscript>
 
     <!--Icons-->
     <link rel="stylesheet" href="./assets/style.css" />
@@ -64,7 +118,13 @@
       <div class="door door-right"></div>
       <div class="doors-lock">
         <div class="doors-emblem">
-          <img src="./images/logo.webp" alt="" width="93" height="81" />
+          <img
+            src="./images/logo.webp"
+            alt=""
+            width="93"
+            height="81"
+            fetchpriority="high"
+          />
         </div>
         <p class="doors-hint">
           <span class="hint-mouse">Mova o mouse para entrar</span>
@@ -158,13 +218,14 @@
             >
               <video
                 class="reel-video"
+                autoplay
                 muted
                 playsinline
                 preload="metadata"
                 width="432"
                 height="540"
                 poster="./video/reel-poster.webp"
-                data-clips="./video/mini-balanca-alimentos.mp4, ./video/mini-rejeicao-batata.mp4, ./video/mini-balanca-parafusos.mp4, ./video/mini-balanca-esteira.mp4, ./video/mini-corte-debrum.mp4, ./video/mini-empacotadora.mp4"
+                data-clips="./video/mini-balanca-alimentos.mp4, ./video/mini-rejeicao-batata.mp4, ./video/mini-balanca-parafusos.mp4, ./video/mini-balanca-esteira.mp4, ./video/mini-empacotadora.mp4"
               >
                 <p>Seu navegador não suporta vídeos.</p>
               </video>
@@ -183,19 +244,29 @@
               </button>
             </div>
 
-            <div class="badge glass" aria-hidden="true">
-              <span class="icon-box">
-                <svg class="icon" viewBox="0 0 24 24">
-                  <rect x="4" y="4" width="16" height="16" rx="2" />
-                  <rect x="9" y="9" width="6" height="6" />
-                  <path
-                    d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"
-                  />
+            <!--
+              Estimativa: 75 embalagens/min x 60 min x 8 h = 36.000 por turno
+              com 20% de paradas: 36.000 x 0,8 = 28.800 por turno
+              x 250 dias uteis = 7.200.000 por ano
+            -->
+            <div
+              class="badge glass"
+              title="Estimativa: 75 embalagens/min × 8 h × 250 dias úteis, descontando 20% do tempo em paradas."
+            >
+              <span class="icon-box icon-box-success">
+                <!--seta de crescimento-->
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <path d="M16 7h6v6" />
                 </svg>
               </span>
               <span>
-                <strong>Desde 2009</strong>
-                <small>Jaraguá do Sul - SC</small>
+                <strong>Cerca de 7,2 milhões</strong>
+                <span class="badge-label">de embalagens por ano</span>
+                <small>1 empacotadora · 1 turno · 75/min</small>
+                <small class="badge-note">
+                  *Valor estimado, considerando 20% de paradas. Pode variar.
+                </small>
               </span>
             </div>
           </div>
@@ -226,7 +297,7 @@
                 width="432"
                 height="768"
                 poster="./video/empacotadora-poster.webp"
-                aria-label="Empacotadora vertical embalando pipoca doce"
+                aria-label="Empacotadora vertical VFFS em operação"
               >
                 <source src="./video/empacotadora.mp4" type="video/mp4" />
                 <p>Seu navegador não suporta vídeos.</p>
@@ -236,25 +307,32 @@
             <div class="feature-text">
               <h3>Empacotadora vertical</h3>
               <p>
-                Empacotadora em operação em uma linha de pipoca doce. O equipamento trabalha de forma contínua e automática, desde a bobina de filme até o pacote pronto na esteira de saída.
+                Empacotadora vertical do tipo VFFS (formação, enchimento e
+                selagem) aplicada ao envase de produtos alimentícios
+                granulados. O ciclo é contínuo e automático: da bobina de filme
+                até o pacote pronto na esteira de saída.
               </p>
 
               <ol class="feature-steps">
                 <li>
                   <strong>Formação da embalagem</strong>
-                  <span>O filme plástico sai da bobina e é moldado em tubo.</span>
+                  <span>O filme é tracionado da bobina e conformado em tubo na gola formadora.</span>
                 </li>
                 <li>
                   <strong>Enchimento</strong>
-                  <span>O produto desce pelo funil para dentro da embalagem.</span>
+                  <span>O produto é descarregado pelo tubo formador para dentro da embalagem.</span>
                 </li>
                 <li>
                   <strong>Selagem e corte</strong>
-                  <span>As garras fecham e separam cada pacote.</span>
+                  <span>As mordaças seladoras fazem a solda transversal e o corte de cada pacote.</span>
                 </li>
                 <li>
                   <strong>Controle pela IHM</strong>
-                  <span>A operação é acompanhada e ajustada na tela touch.</span>
+                  <span>Os parâmetros de operação são monitorados e ajustados na tela touch screen.</span>
+                </li>
+                <li>
+                  <strong>Capacidade produtiva</strong>
+                  <span>Até 75 embalagens por minuto, conforme o formato da embalagem e o produto.</span>
                 </li>
               </ol>
 
@@ -267,7 +345,7 @@
             </div>
           </article>
 
-          <!--Projeto: Balança de checagem de peso-->
+          <!--Projeto: Balança dinâmica de checagem de peso-->
           <article class="feature glass feature-reverse feature-wide">
             <div class="feature-media">
               <video
@@ -288,23 +366,27 @@
             </div>
 
             <div class="feature-text">
-              <h3>Balança de checagem de peso</h3>
+              <h3>Balança dinâmica de checagem de peso</h3>
               <p>
-                Sistema de checagem de peso para pacotes de alimentos, com tela touch personalizada com a marca Sasse. Cada pacote é pesado sobre a esteira e, se estiver fora do peso, é retirado da linha automaticamente.
+                Verificadora de peso dinâmica (checkweigher) para pacotes de
+                alimentos, com IHM touch screen personalizada. Cada pacote é
+                pesado em movimento e comparado
+                à faixa de tolerância da receita; os que ficam abaixo ou acima
+                do peso são rejeitados automaticamente, sem parar a linha.
               </p>
 
               <ol class="feature-steps">
                 <li>
-                  <strong>Pesagem na esteira</strong>
-                  <span>O pacote passa pela balança e o peso aparece na tela.</span>
+                  <strong>Pesagem dinâmica</strong>
+                  <span>O pacote é pesado em movimento sobre a esteira, com leitura em tempo real na IHM.</span>
                 </li>
                 <li>
-                  <strong>Receitas e tara</strong>
-                  <span>O operador escolhe a receita e faz a tara da balança pela IHM.</span>
+                  <strong>Gestão de receitas e tara</strong>
+                  <span>Cada receita define o peso nominal e as tolerâncias do produto; a tara é feita pela IHM.</span>
                 </li>
                 <li>
                   <strong>Rejeição automática</strong>
-                  <span>Um empurrador pneumático retira os pacotes fora do peso.</span>
+                  <span>Um rejeitor pneumático desvia da linha os pacotes fora da tolerância.</span>
                 </li>
               </ol>
 
@@ -317,7 +399,7 @@
             </div>
           </article>
 
-          <!--Projeto: Checagem de peso de parafusos-->
+          <!--Projeto: Checagem de peso de peças e componentes-->
           <article class="feature glass">
             <div class="feature-media">
               <video
@@ -330,7 +412,7 @@
                 width="432"
                 height="772"
                 poster="./video/balanca-checagem-parafusos-poster.webp"
-                aria-label="Balança de checagem de pacotes de parafusos"
+                aria-label="Balança de checagem de pacotes de peças na saída da empacotadora"
               >
                 <source src="./video/balanca-checagem-parafusos.mp4" type="video/mp4" />
                 <p>Seu navegador não suporta vídeos.</p>
@@ -338,23 +420,27 @@
             </div>
 
             <div class="feature-text">
-              <h3>Checagem de peso de parafusos</h3>
+              <h3>Checagem de peso de peças e componentes</h3>
               <p>
-                Balança de checagem instalada na saída da empacotadora de parafusos. Os pacotes passam pela esteira, são pesados e os que estão fora do peso são desviados da linha.
+                Balança dinâmica de checagem (checkweigher) integrada à saída
+                da empacotadora, para pacotes de peças e componentes, como
+                parafusos e outros itens pequenos. Cada pacote é pesado em
+                movimento e, se estiver fora da tolerância, é desviado da linha
+                automaticamente.
               </p>
 
               <ol class="feature-steps">
                 <li>
-                  <strong>Integração com a empacotadora</strong>
-                  <span>Os pacotes chegam direto da máquina de embalar.</span>
+                  <strong>Integração em linha</strong>
+                  <span>Instalada na saída da empacotadora, recebe os pacotes sem intervenção manual.</span>
                 </li>
                 <li>
                   <strong>Indicadores de produção</strong>
-                  <span>A tela mostra a velocidade em pacotes por minuto, os pacotes bons, os rejeitados e a produção total.</span>
+                  <span>A IHM exibe a velocidade em PPM (pacotes por minuto) e os contadores de pacotes aprovados, rejeitados e da produção total.</span>
                 </li>
                 <li>
-                  <strong>Desvio dos rejeitados</strong>
-                  <span>Os pacotes fora do peso são separados automaticamente.</span>
+                  <strong>Rejeição automática</strong>
+                  <span>Um sistema de desvio separa os pacotes fora da tolerância, sem parar a linha.</span>
                 </li>
               </ol>
 
@@ -367,7 +453,7 @@
             </div>
           </article>
 
-          <!--Projeto: Rejeição de pacotes de batata-->
+          <!--Projeto: Linha de checkweigher (esteira elevatória + rejeição)-->
           <article class="feature glass feature-reverse">
             <div class="feature-media">
               <video
@@ -379,132 +465,46 @@
                 preload="none"
                 width="432"
                 height="762"
-                poster="./video/balanca-rejeicao-batata-poster.webp"
-                aria-label="Balança com rejeição de pacotes de batata"
+                poster="./video/linha-checkweigher-poster.webp"
+                aria-label="Esteira elevatória levando pacotes até o checkweigher, com rejeição automática"
               >
-                <source src="./video/balanca-rejeicao-batata.mp4" type="video/mp4" />
+                <source src="./video/linha-checkweigher.mp4" type="video/mp4" />
                 <p>Seu navegador não suporta vídeos.</p>
               </video>
             </div>
 
             <div class="feature-text">
-              <h3>Rejeição de pacotes de batata</h3>
+              <h3>Esteira elevatória e checkweigher com rejeição automática</h3>
               <p>
-                Balança de checagem para pacotes de batata. Os pacotes com peso fora da faixa definida são identificados e retirados da esteira automaticamente.
+                Solução completa de transporte e controle de peso na descarga
+                da empacotadora, que pode ser aplicada a diversos tipos de
+                produtos. As embalagens avançam com esteiras até o
+                checkweigher, que pesa cada unidade em movimento, indica na IHM
+                a aprovação ou rejeição conforme o padrão de peso configurado e
+                retira da linha os itens não conformes, sem interromper o fluxo
+                de produção.
               </p>
 
               <ol class="feature-steps">
                 <li>
-                  <strong>Pesagem contínua</strong>
-                  <span>Cada pacote é pesado enquanto passa pela esteira.</span>
+                  <strong>Transporte elevatório</strong>
+                  <span>Esteira modular com taliscas eleva os pacotes da descarga da empacotadora até a entrada da balança.</span>
                 </li>
                 <li>
-                  <strong>Indicação na tela</strong>
-                  <span>O resultado da pesagem aparece na IHM.</span>
+                  <strong>Pesagem dinâmica</strong>
+                  <span>Cada pacote é pesado individualmente em movimento, por meio de célula de carga, com leitura em tempo real.</span>
                 </li>
                 <li>
-                  <strong>Rejeição</strong>
-                  <span>Os pacotes reprovados saem da linha sem parar a produção.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!--Projeto: Esteira elevatória com balança de checagem-->
-          <article class="feature glass">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="432"
-                height="762"
-                poster="./video/balanca-esteira-elevatoria-poster.webp"
-                aria-label="Esteira elevatória levando pacotes até a balança de checagem"
-              >
-                <source src="./video/balanca-esteira-elevatoria.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
-            </div>
-
-            <div class="feature-text">
-              <h3>Esteira elevatória com balança de checagem</h3>
-              <p>
-                Os pacotes saem da empacotadora, sobem por uma esteira elevatória e passam pela balança de checagem. A tela muda de cor para indicar o resultado de cada pesagem.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Transporte</strong>
-                  <span>A esteira com taliscas leva os pacotes até a balança.</span>
+                  <strong>Indicação de aprovação e rejeição</strong>
+                  <span>A IHM sinaliza se o peso está aprovado ou rejeitado, conforme o padrão e as tolerâncias configurados.</span>
                 </li>
                 <li>
-                  <strong>Pesagem</strong>
-                  <span>Cada pacote é pesado individualmente.</span>
+                  <strong>Rejeição de não conformes</strong>
+                  <span>Integração com sistema de descarte para retirar automaticamente da linha os itens rejeitados.</span>
                 </li>
                 <li>
-                  <strong>Sinalização</strong>
-                  <span>A tela fica verde para peso aprovado e vermelha para fora do peso.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!--Projeto: Corte de debrum-->
-          <article class="feature glass feature-reverse">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="576"
-                height="640"
-                poster="./video/corte-debrum-poster.webp"
-                aria-label="Máquina de corte de debrum em funcionamento"
-              >
-                <source src="./video/corte-debrum-otimizado.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
-            </div>
-
-            <div class="feature-text">
-              <h3>Corte de debrum</h3>
-              <p>
-                Máquina para o corte de rolos de debrum. Um rolo largo de fita é dividido em vários rolos mais estreitos de forma automática, prontos para o uso.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Fixação do rolo</strong>
-                  <span>O rolo de debrum é encaixado no eixo da máquina.</span>
-                </li>
-                <li>
-                  <strong>Corte</strong>
-                  <span>O rolo gira e é cortado em faixas mais estreitas.</span>
-                </li>
-                <li>
-                  <strong>Rolos prontos</strong>
-                  <span>Saem vários rolos menores na largura desejada.</span>
+                  <strong>Segurança operacional</strong>
+                  <span>Painel de comando com botão de parada de emergência junto ao equipamento.</span>
                 </li>
               </ol>
 
@@ -521,7 +521,8 @@
           <h3 class="gallery-title">Mais projetos</h3>
           <div class="swiper">
             <div class="swiper-wrapper">
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/maquina-1.webp"
@@ -532,15 +533,17 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Painel elétrico</h3>
+                  <h4>Painel elétrico</h4>
                   <p>
                     Montagem de painéis elétricos para a automação de máquinas e
                     processos.
                   </p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/maquina-2.webp"
@@ -551,15 +554,17 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Empacotadeira</h3>
+                  <h4>Empacotadeira</h4>
                   <p>
                     Automação de máquina empacotadeira para a indústria
                     alimentícia.
                   </p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel2.webp"
@@ -570,15 +575,17 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Projeto elétrico</h3>
+                  <h4>Projeto elétrico</h4>
                   <p>
                     Projeto e montagem de painel para automação completa do
                     equipamento.
                   </p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel3.webp"
@@ -589,12 +596,14 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Retrofit de painéis</h3>
+                  <h4>Retrofit de painéis</h4>
                   <p>Modernização de painéis elétricos existentes.</p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel5.webp"
@@ -605,12 +614,14 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Retrofit de painéis</h3>
+                  <h4>Retrofit de painéis</h4>
                   <p>Substituição de componentes e reorganização do painel.</p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel6.webp"
@@ -621,12 +632,14 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Retrofit de painéis</h3>
+                  <h4>Retrofit de painéis</h4>
                   <p>Adequação do painel às novas necessidades da produção.</p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel7.webp"
@@ -637,12 +650,14 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Retrofit de painéis</h3>
+                  <h4>Retrofit de painéis</h4>
                   <p>Atualização do painel com componentes atuais e confiáveis.</p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/painel9.webp"
@@ -653,15 +668,17 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Esteiras transportadoras</h3>
+                  <h4>Esteiras transportadoras</h4>
                   <p>
                     Automação de esteiras para o transporte entre as etapas da
                     produção.
                   </p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
 
-              <figure class="product swiper-slide glass">
+              <div class="product swiper-slide glass">
+                <figure>
                 <div class="product-media">
                   <img
                     src="./images/esteira.webp"
@@ -672,15 +689,42 @@
                   />
                 </div>
                 <figcaption>
-                  <h3>Esteiras transportadoras</h3>
+                  <h4>Esteiras transportadoras</h4>
                   <p>
                     Automação de esteiras para o transporte entre as etapas da
                     produção.
                   </p>
                 </figcaption>
-              </figure>
+                </figure>
+              </div>
             </div>
             <div class="swiper-pagination"></div>
+            <button type="button" class="swiper-button-prev" aria-label="Projeto anterior"></button>
+            <button type="button" class="swiper-button-next" aria-label="Próximo projeto"></button>
+          </div>
+        </div>
+      </section>
+
+      <!--Chamada: projetos sob medida-->
+      <section class="cta-section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-banner glass">
+            <div class="cta-text">
+              <p class="eyebrow">Projetos sob medida</p>
+              <h2 id="cta-title">
+                Desenvolvemos seu projeto de
+                <span class="highlight">Automação Industrial</span>
+              </h2>
+              <p class="lead">
+                Solução sob medida para a sua linha de produção.
+              </p>
+            </div>
+            <a href="#contact" class="button glow button-lg">
+              Solicite um orçamento
+              <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -692,8 +736,9 @@
             <h2 class="eyebrow">Serviços</h2>
             <p>
               Desde 2009, a <strong>Sasse Automação</strong> é especializada em
-              automação industrial e manutenção eletroeletrônica, atendendo
-              empresas de diferentes portes e segmentos.
+              automação industrial e manutenção eletroeletrônica e mecânica
+              de máquinas, atendendo empresas de diferentes portes e
+              segmentos.
             </p>
           </header>
 
@@ -713,7 +758,7 @@
               <div class="card-media">
                 <img
                   src="./images/painel8.webp"
-                  alt=""
+                  alt="Equipamento industrial automatizado com IHM touch screen"
                   width="332"
                   height="436"
                   loading="lazy"
@@ -724,9 +769,9 @@
             <article class="card glass">
               <span class="icon-box icon-box-lg icon-box-neutral">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-                  />
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                  <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
                 </svg>
               </span>
               <h3>Manutenção eletroeletrônica</h3>
@@ -738,9 +783,35 @@
               <div class="card-media">
                 <img
                   src="./images/manut-eletroeletronica.webp"
-                  alt=""
+                  alt="Painel elétrico industrial aberto para manutenção"
                   width="273"
                   height="228"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="card glass">
+              <span class="icon-box icon-box-lg">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              </span>
+              <h3>Manutenção mecânica</h3>
+              <p>
+                Diagnóstico, ajuste e substituição de componentes mecânicos de
+                máquinas e equipamentos, como rolamentos, correias,
+                transmissões e mecanismos de acionamento, garantindo a
+                confiabilidade e a disponibilidade da linha.
+              </p>
+              <div class="card-media">
+                <img
+                  src="./images/manutencao-mecanica.webp"
+                  alt="Mordaças e mecanismo de acionamento de empacotadora"
+                  width="608"
+                  height="456"
                   loading="lazy"
                 />
               </div>
@@ -912,7 +983,7 @@
         </a>
 
         <div class="copyright">
-          <p>Automação industrial e manutenção eletroeletrônica.</p>
+          <p>Automação industrial e manutenção eletroeletrônica e mecânica.</p>
           <p>
             © <span id="year">2025</span> Sasse Automação. Todos os direitos
             reservados.

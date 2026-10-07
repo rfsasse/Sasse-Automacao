@@ -31,6 +31,14 @@
       window.addEventListener(eventName, onActivity, { passive: true })
     }
 
+    /*ao entrar no site, abre sozinha depois de 4s mesmo sem mexer
+      (quem mexer antes abre na hora). Bom para o Google e para quem nao usa mouse*/
+    const AUTO_OPEN_TIME = 4000
+    setTimeout(function () {
+      lastActivity = Date.now()
+      openDoors()
+    }, AUTO_OPEN_TIME)
+
     /*confere 1x por segundo se ficou parado tempo demais*/
     setInterval(function () {
       const idle = Date.now() - lastActivity

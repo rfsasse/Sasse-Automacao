@@ -464,6 +464,48 @@ nav.show .icon-close {
   height: 3rem;
 }
 
+/*seta verde brilhante*/
+.icon-box-success {
+  background: rgba(34, 197, 94, 0.25);
+  border: 2px solid #4dff88;
+  color: #4dff88;
+  box-shadow: 0 0 18px rgba(77, 255, 136, 0.6);
+  animation: successGlow 1.8s ease-in-out infinite;
+}
+
+.icon-box-success .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 6px rgba(77, 255, 136, 1));
+}
+
+@keyframes successGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(77, 255, 136, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 28px rgba(77, 255, 136, 0.95),
+      0 0 4px rgba(77, 255, 136, 1) inset;
+  }
+}
+
+.badge {
+  max-width: 19rem;
+  cursor: help;
+}
+
+/*letra miuda da estimativa*/
+.badge small.badge-note {
+  margin-top: 0.25rem;
+  white-space: normal;
+  font-size: 0.625rem;
+  line-height: 1.3;
+  color: var(--neutral-500);
+}
+
 .badge strong {
   display: block;
   color: var(--white);
@@ -471,7 +513,21 @@ nav.show .icon-close {
   font-weight: 700;
 }
 
+.badge strong {
+  font: 800 1.25rem / 1.2 var(--title-font);
+  color: var(--orange);
+}
+
+.badge-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
 .badge small {
+  display: block;
+  white-space: nowrap;
   font-size: 0.75rem;
   color: var(--neutral-300);
 }
@@ -529,6 +585,12 @@ nav.show .icon-close {
   transform: translateY(-5px);
 }
 
+.product > figure {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .product-media {
   position: relative;
   height: 16rem;
@@ -561,7 +623,7 @@ nav.show .icon-close {
   padding: 0.5rem 2rem 2rem;
 }
 
-.product h3 {
+.product h4 {
   font: 700 1.5rem var(--title-font);
   color: var(--white);
   margin-bottom: 0.75rem;
@@ -571,6 +633,41 @@ nav.show .icon-close {
   font-size: 0.875rem;
   line-height: 1.7;
   color: var(--neutral-300);
+}
+
+/*setas do carrossel*/
+#projects .swiper-button-prev,
+#projects .swiper-button-next {
+  top: calc(50% - 1.5rem); /*centraliza nos cards, descontando as bolinhas*/
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(23, 23, 23, 0.85);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--orange);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+#projects .swiper-button-prev {
+  left: 0.75rem;
+}
+
+#projects .swiper-button-next {
+  right: 0.75rem;
+}
+
+#projects .swiper-button-prev::after,
+#projects .swiper-button-next::after {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+#projects .swiper-button-prev:hover,
+#projects .swiper-button-next:hover {
+  border-color: var(--orange);
+  transform: scale(1.08);
 }
 
 .swiper-pagination-bullet {
@@ -669,6 +766,65 @@ nav.show .icon-close {
 .feature-steps span {
   font-size: 0.875rem;
   color: var(--neutral-400);
+}
+
+/*Chamada: projetos sob medida*/
+
+.cta-section {
+  padding: 1rem 0 3rem;
+}
+
+.cta-banner {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  justify-items: start;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  border-color: var(--orange-border);
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: ''; /*faixa de seguranca no topo, igual as portas*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--orange) 0 12px,
+    var(--neutral-900) 12px 24px
+  );
+}
+
+.cta-banner::after {
+  content: ''; /*brilho laranja de fundo*/
+  position: absolute;
+  right: -6rem;
+  bottom: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: rgba(251, 173, 65, 0.12);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.cta-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-text h2 {
+  font: 800 1.875rem / 1.15 var(--title-font);
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.cta-text .lead {
+  color: var(--neutral-300);
 }
 
 /*Serviços*/
@@ -1083,6 +1239,11 @@ footer .social a:hover {
     grid-template-columns: 1fr 1fr;
   }
 
+  /*card que sobra sozinho na linha ocupa a largura toda*/
+  .cards > .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
   .footer-row {
     flex-direction: row;
     justify-content: space-between;
@@ -1117,8 +1278,28 @@ footer .social a:hover {
     margin: 0 0 0 0.5rem;
   }
 
-  .cards {
+  .cta-banner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
     gap: 3rem;
+    padding: 3.5rem 4rem;
+  }
+
+  .cta-text h2 {
+    font-size: 2.75rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .cards > .card:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 
   .feature {

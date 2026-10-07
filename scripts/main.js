@@ -136,6 +136,17 @@ if (typeof Swiper !== 'undefined') {
       el: '.swiper-pagination',
       clickable: true
     },
+    /*setas para passar manualmente (o automatico continua depois)*/
+    navigation: {
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next'
+    },
+    grabCursor: true, /*mostra a "mãozinha" indicando que da para arrastar*/
+    a11y: {
+      prevSlideMessage: 'Projeto anterior',
+      nextSlideMessage: 'Próximo projeto',
+      paginationBulletMessage: 'Ir para o projeto {{index}}'
+    },
     keyboard: true,
     breakpoints: {
       767: {
@@ -147,11 +158,14 @@ if (typeof Swiper !== 'undefined') {
     }
   })
 
-  /*tambem para quando o usuario navega pelo teclado dentro do carrossel*/
+  /*tambem para quando o usuario navega pelo teclado dentro do carrossel
+    (clique com mouse nas setas nao para o automatico)*/
   const productsCarousel = document.querySelector('#projects .swiper')
 
   if (productsSwiper.autoplay && productsSwiper.params.autoplay) {
-    productsCarousel.addEventListener('focusin', () => productsSwiper.autoplay.stop())
+    productsCarousel.addEventListener('focusin', function (event) {
+      if (event.target.matches(':focus-visible')) productsSwiper.autoplay.stop()
+    })
     productsCarousel.addEventListener('focusout', () => productsSwiper.autoplay.start())
   }
 }
@@ -206,7 +220,16 @@ if (reel && reelVideo) {
     reelToggle.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo')
   }
 
-  function playClip(index, autoplay) {
+  let pausedByUser = false
+
+  function startPlayback() {
+    reelVideo.muted = true /*navegadores so deixam tocar sozinho se estiver mudo*/
+    reelVideo.play().catch(function () {
+      setPaused(true) /*navegador bloqueou; tenta de novo na proxima interacao*/
+    })
+  }
+
+  function playClip(index) {
     currentClip = index
     bars.forEach(function (bar, i) {
       bar.classList.toggle('done', i < index)
@@ -214,13 +237,21 @@ if (reel && reelVideo) {
     })
     reelVideo.src = clips[index]
     reelVideo.loop = clips.length === 1
-
-    if (autoplay) {
-      reelVideo.play().catch(function () {
-        setPaused(true) /*navegador bloqueou o autoplay*/
-      })
-    }
+    if (!pausedByUser) startPlayback()
   }
+
+  /*se o navegador bloqueou o inicio, volta a tocar no primeiro movimento, toque ou tecla*/
+  function retryPlayback() {
+    if (reelVideo.paused && !pausedByUser) startPlayback()
+  }
+
+  for (const eventName of ['pointerdown', 'touchstart', 'keydown', 'mousemove', 'scroll']) {
+    window.addEventListener(eventName, retryPlayback, { passive: true })
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) retryPlayback()
+  })
 
   reelVideo.addEventListener('timeupdate', function () {
     if (!reelVideo.duration) return
@@ -229,25 +260,28 @@ if (reel && reelVideo) {
   })
 
   reelVideo.addEventListener('ended', function () {
-    playClip((currentClip + 1) % clips.length, true)
+    playClip((currentClip + 1) % clips.length)
   })
 
   reelVideo.addEventListener('play', () => setPaused(false))
   reelVideo.addEventListener('pause', () => setPaused(true))
 
+  /*botao de pausa: se o usuario pausou, nao volta a tocar sozinho*/
   function togglePlay() {
-    if (reelVideo.paused) reelVideo.play()
-    else reelVideo.pause()
+    if (reelVideo.paused) {
+      pausedByUser = false
+      startPlayback()
+    } else {
+      pausedByUser = true
+      reelVideo.pause()
+    }
   }
 
   reelToggle.addEventListener('click', togglePlay)
   reelVideo.addEventListener('click', togglePlay)
 
-  if (clips.length) {
-    /*quem prefere menos movimento comeca pausado*/
-    playClip(0, !reduceMotion)
-    if (reduceMotion) setPaused(true)
-  }
+  /*comeca tocando assim que a pagina abre*/
+  if (clips.length) playClip(0)
 }
 
 /*ScrollReveal (desligado para quem prefere menos animação)*/
@@ -263,6 +297,7 @@ if (typeof ScrollReveal !== 'undefined' && !reduceMotion) {
   scrollReveal.reveal(
     `#home .text, #home .home-media,
     #projects .section-header, #projects .feature, #projects .swiper,
+    .cta-banner,
     #services .services-header, #services .cards,
     #about .text, #about .founder,
     #contact .text, #contact .links,
