@@ -11,7 +11,9 @@
  *  Formatos aceitos:
  *    whatsapp : só números, com 55 + DDD. Ex.: '5547984534330'
  *    telefone : só números, com 55 + DDD. Ex.: '5547988502740'
- *    email    : endereço completo.        Ex.: 'contato@empresa.com.br'
+ *
+ *  O e-mail da empresa NÃO fica aqui: ele fica guardado em segredo no
+ *  servidor do formulário (backend/contato), para não ficar exposto.
  */
 
 const SITE_CONFIG = Object.freeze({
@@ -24,6 +26,11 @@ const SITE_CONFIG = Object.freeze({
   // TODO: confirmar com o cliente
   telefone: '5547988502740',
 
-  // TODO: e-mail provisório — substituir pelo e-mail real
-  email: 'sasseautomacao@email.com'
+  // Endereço do servidor do formulário "Solicite um orçamento"
+  // (aparece depois de publicar o backend/contato no Cloudflare).
+  // Vazio = o formulário avisa que está em configuração.
+  formEndpoint: '',
+
+  // Chave pública do anti-robô Cloudflare Turnstile (opcional)
+  turnstileSiteKey: ''
 })

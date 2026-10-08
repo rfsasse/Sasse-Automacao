@@ -8,7 +8,7 @@
       name="description"
       content="Automação industrial e manutenção eletroeletrônica e mecânica em Jaraguá do Sul - SC desde 2009. Balanças de checagem, empacotadoras e painéis elétricos."
     />
-    <meta name="theme-color" content="#262626" />
+    <meta name="theme-color" content="#404040" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!--Compartilhamento em redes sociais-->
@@ -198,12 +198,6 @@
               nossos clientes a aumentar a produtividade e a acelerar o retorno
               do investimento.
             </p>
-            <a href="#contact" class="button glow">
-              Solicite um orçamento
-              <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
           </div>
 
           <div class="home-media">
@@ -284,238 +278,230 @@
           </header>
 
           <!--Para incluir um projeto: copie um <article> abaixo e troque o vídeo e os textos-->
-          <!--Projeto: Empacotadora vertical-->
-          <article class="feature glass">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="432"
-                height="768"
-                poster="./video/empacotadora-poster.webp"
-                aria-label="Empacotadora vertical VFFS em operação"
-              >
-                <source src="./video/empacotadora.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
+          <!--No PC vira carrossel horizontal (scripts/main.js); no celular fica um embaixo do outro-->
+          <div class="projects-carousel">
+            <div class="projects-track">
+              <!--Projeto: Empacotadora vertical-->
+              <article class="feature glass">
+                <div class="feature-media">
+                  <video
+                    class="autoplay-in-view"
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="none"
+                    width="432"
+                    height="768"
+                    poster="./video/empacotadora-poster.webp"
+                    aria-label="Empacotadora vertical VFFS em operação"
+                  >
+                    <source src="./video/empacotadora.mp4" type="video/mp4" />
+                    <p>Seu navegador não suporta vídeos.</p>
+                  </video>
+                </div>
+
+                <div class="feature-text">
+                  <h3>Empacotadora vertical</h3>
+                  <p>
+                    Empacotadora vertical do tipo VFFS (formação, enchimento e
+                    selagem) aplicada ao envase de produtos alimentícios
+                    granulados. O ciclo é contínuo e automático: da bobina de filme
+                    até o pacote pronto na esteira de saída.
+                  </p>
+
+                  <ol class="feature-steps">
+                    <li>
+                      <strong>Formação da embalagem</strong>
+                      <span>O filme é tracionado da bobina e conformado em tubo na gola formadora.</span>
+                    </li>
+                    <li>
+                      <strong>Enchimento</strong>
+                      <span>O produto é descarregado pelo tubo formador para dentro da embalagem.</span>
+                    </li>
+                    <li>
+                      <strong>Selagem e corte</strong>
+                      <span>As mordaças seladoras fazem a solda transversal e o corte de cada pacote.</span>
+                    </li>
+                    <li>
+                      <strong>Controle pela IHM</strong>
+                      <span>Os parâmetros de operação são monitorados e ajustados na tela touch screen.</span>
+                    </li>
+                    <li>
+                      <strong>Capacidade produtiva</strong>
+                      <span>Até 75 embalagens por minuto, conforme o formato da embalagem e o produto.</span>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+
+              <!--Projeto: Balança dinâmica de checagem de peso-->
+              <article class="feature glass feature-reverse feature-wide">
+                <div class="feature-media">
+                  <video
+                    class="autoplay-in-view"
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="none"
+                    width="960"
+                    height="540"
+                    poster="./video/balanca-checagem-alimentos-poster.webp"
+                    aria-label="Balança de checagem de peso com tela da Sasse Automação"
+                  >
+                    <source src="./video/balanca-checagem-alimentos.mp4" type="video/mp4" />
+                    <p>Seu navegador não suporta vídeos.</p>
+                  </video>
+                </div>
+
+                <div class="feature-text">
+                  <h3>Balança dinâmica de checagem de peso</h3>
+                  <p>
+                    Verificadora de peso dinâmica (checkweigher) para pacotes de
+                    alimentos, com IHM touch screen personalizada. Cada pacote é
+                    pesado em movimento e comparado
+                    à faixa de tolerância da receita; os que ficam abaixo ou acima
+                    do peso são rejeitados automaticamente, sem parar a linha.
+                  </p>
+
+                  <ol class="feature-steps">
+                    <li>
+                      <strong>Pesagem dinâmica</strong>
+                      <span>O pacote é pesado em movimento sobre a esteira, com leitura em tempo real na IHM.</span>
+                    </li>
+                    <li>
+                      <strong>Gestão de receitas e tara</strong>
+                      <span>Cada receita define o peso nominal e as tolerâncias do produto; a tara é feita pela IHM.</span>
+                    </li>
+                    <li>
+                      <strong>Rejeição automática</strong>
+                      <span>Um rejeitor pneumático desvia da linha os pacotes fora da tolerância.</span>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+
+              <!--Projeto: Checagem de peso de peças e componentes-->
+              <article class="feature glass">
+                <div class="feature-media">
+                  <video
+                    class="autoplay-in-view"
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="none"
+                    width="432"
+                    height="772"
+                    poster="./video/balanca-checagem-parafusos-poster.webp"
+                    aria-label="Balança de checagem de pacotes de peças na saída da empacotadora"
+                  >
+                    <source src="./video/balanca-checagem-parafusos.mp4" type="video/mp4" />
+                    <p>Seu navegador não suporta vídeos.</p>
+                  </video>
+                </div>
+
+                <div class="feature-text">
+                  <h3>Checagem de peso de peças e componentes</h3>
+                  <p>
+                    Balança dinâmica de checagem (checkweigher) integrada à saída
+                    da empacotadora, para pacotes de peças e componentes, como
+                    parafusos e outros itens pequenos. Cada pacote é pesado em
+                    movimento e, se estiver fora da tolerância, é desviado da linha
+                    automaticamente.
+                  </p>
+
+                  <ol class="feature-steps">
+                    <li>
+                      <strong>Integração em linha</strong>
+                      <span>Instalada na saída da empacotadora, recebe os pacotes sem intervenção manual.</span>
+                    </li>
+                    <li>
+                      <strong>Indicadores de produção</strong>
+                      <span>A IHM exibe a velocidade em PPM (pacotes por minuto) e os contadores de pacotes aprovados, rejeitados e da produção total.</span>
+                    </li>
+                    <li>
+                      <strong>Rejeição automática</strong>
+                      <span>Um sistema de desvio separa os pacotes fora da tolerância, sem parar a linha.</span>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+
+              <!--Projeto: Linha de checkweigher (esteira elevatória + rejeição)-->
+              <article class="feature glass feature-reverse">
+                <div class="feature-media">
+                  <video
+                    class="autoplay-in-view"
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="none"
+                    width="432"
+                    height="762"
+                    poster="./video/linha-checkweigher-poster.webp"
+                    aria-label="Esteira elevatória levando pacotes até o checkweigher, com rejeição automática"
+                  >
+                    <source src="./video/linha-checkweigher.mp4" type="video/mp4" />
+                    <p>Seu navegador não suporta vídeos.</p>
+                  </video>
+                </div>
+
+                <div class="feature-text">
+                  <h3>Esteira elevatória e checkweigher com rejeição automática</h3>
+                  <p>
+                    Solução completa de transporte e controle de peso na descarga
+                    da empacotadora, que pode ser aplicada a diversos tipos de
+                    produtos. As embalagens avançam com esteiras até o
+                    checkweigher, que pesa cada unidade em movimento, indica na IHM
+                    a aprovação ou rejeição conforme o padrão de peso configurado e
+                    retira da linha os itens não conformes, sem interromper o fluxo
+                    de produção.
+                  </p>
+
+                  <ol class="feature-steps">
+                    <li>
+                      <strong>Transporte elevatório</strong>
+                      <span>Esteira modular com taliscas eleva os pacotes da descarga da empacotadora até a entrada da balança.</span>
+                    </li>
+                    <li>
+                      <strong>Pesagem dinâmica</strong>
+                      <span>Cada pacote é pesado individualmente em movimento, por meio de célula de carga, com leitura em tempo real.</span>
+                    </li>
+                    <li>
+                      <strong>Indicação de aprovação e rejeição</strong>
+                      <span>A IHM sinaliza se o peso está aprovado ou rejeitado, conforme o padrão e as tolerâncias configurados.</span>
+                    </li>
+                    <li>
+                      <strong>Rejeição de não conformes</strong>
+                      <span>Integração com sistema de descarte para retirar automaticamente da linha os itens rejeitados.</span>
+                    </li>
+                    <li>
+                      <strong>Segurança operacional</strong>
+                      <span>Painel de comando com botão de parada de emergência junto ao equipamento.</span>
+                    </li>
+                  </ol>
+                </div>
+              </article>
             </div>
 
-            <div class="feature-text">
-              <h3>Empacotadora vertical</h3>
-              <p>
-                Empacotadora vertical do tipo VFFS (formação, enchimento e
-                selagem) aplicada ao envase de produtos alimentícios
-                granulados. O ciclo é contínuo e automático: da bobina de filme
-                até o pacote pronto na esteira de saída.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Formação da embalagem</strong>
-                  <span>O filme é tracionado da bobina e conformado em tubo na gola formadora.</span>
-                </li>
-                <li>
-                  <strong>Enchimento</strong>
-                  <span>O produto é descarregado pelo tubo formador para dentro da embalagem.</span>
-                </li>
-                <li>
-                  <strong>Selagem e corte</strong>
-                  <span>As mordaças seladoras fazem a solda transversal e o corte de cada pacote.</span>
-                </li>
-                <li>
-                  <strong>Controle pela IHM</strong>
-                  <span>Os parâmetros de operação são monitorados e ajustados na tela touch screen.</span>
-                </li>
-                <li>
-                  <strong>Capacidade produtiva</strong>
-                  <span>Até 75 embalagens por minuto, conforme o formato da embalagem e o produto.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+            <div class="projects-nav">
+              <button
+                type="button"
+                class="swiper-button-prev projects-prev"
+                aria-label="Projeto anterior"
+              ></button>
+              <div class="projects-pagination"></div>
+              <p class="projects-counter" aria-live="polite"></p>
+              <button
+                type="button"
+                class="swiper-button-next projects-next"
+                aria-label="Próximo projeto"
+              ></button>
             </div>
-          </article>
-
-          <!--Projeto: Balança dinâmica de checagem de peso-->
-          <article class="feature glass feature-reverse feature-wide">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="960"
-                height="540"
-                poster="./video/balanca-checagem-alimentos-poster.webp"
-                aria-label="Balança de checagem de peso com tela da Sasse Automação"
-              >
-                <source src="./video/balanca-checagem-alimentos.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
-            </div>
-
-            <div class="feature-text">
-              <h3>Balança dinâmica de checagem de peso</h3>
-              <p>
-                Verificadora de peso dinâmica (checkweigher) para pacotes de
-                alimentos, com IHM touch screen personalizada. Cada pacote é
-                pesado em movimento e comparado
-                à faixa de tolerância da receita; os que ficam abaixo ou acima
-                do peso são rejeitados automaticamente, sem parar a linha.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Pesagem dinâmica</strong>
-                  <span>O pacote é pesado em movimento sobre a esteira, com leitura em tempo real na IHM.</span>
-                </li>
-                <li>
-                  <strong>Gestão de receitas e tara</strong>
-                  <span>Cada receita define o peso nominal e as tolerâncias do produto; a tara é feita pela IHM.</span>
-                </li>
-                <li>
-                  <strong>Rejeição automática</strong>
-                  <span>Um rejeitor pneumático desvia da linha os pacotes fora da tolerância.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!--Projeto: Checagem de peso de peças e componentes-->
-          <article class="feature glass">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="432"
-                height="772"
-                poster="./video/balanca-checagem-parafusos-poster.webp"
-                aria-label="Balança de checagem de pacotes de peças na saída da empacotadora"
-              >
-                <source src="./video/balanca-checagem-parafusos.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
-            </div>
-
-            <div class="feature-text">
-              <h3>Checagem de peso de peças e componentes</h3>
-              <p>
-                Balança dinâmica de checagem (checkweigher) integrada à saída
-                da empacotadora, para pacotes de peças e componentes, como
-                parafusos e outros itens pequenos. Cada pacote é pesado em
-                movimento e, se estiver fora da tolerância, é desviado da linha
-                automaticamente.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Integração em linha</strong>
-                  <span>Instalada na saída da empacotadora, recebe os pacotes sem intervenção manual.</span>
-                </li>
-                <li>
-                  <strong>Indicadores de produção</strong>
-                  <span>A IHM exibe a velocidade em PPM (pacotes por minuto) e os contadores de pacotes aprovados, rejeitados e da produção total.</span>
-                </li>
-                <li>
-                  <strong>Rejeição automática</strong>
-                  <span>Um sistema de desvio separa os pacotes fora da tolerância, sem parar a linha.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!--Projeto: Linha de checkweigher (esteira elevatória + rejeição)-->
-          <article class="feature glass feature-reverse">
-            <div class="feature-media">
-              <video
-                class="autoplay-in-view"
-                muted
-                loop
-                playsinline
-                controls
-                preload="none"
-                width="432"
-                height="762"
-                poster="./video/linha-checkweigher-poster.webp"
-                aria-label="Esteira elevatória levando pacotes até o checkweigher, com rejeição automática"
-              >
-                <source src="./video/linha-checkweigher.mp4" type="video/mp4" />
-                <p>Seu navegador não suporta vídeos.</p>
-              </video>
-            </div>
-
-            <div class="feature-text">
-              <h3>Esteira elevatória e checkweigher com rejeição automática</h3>
-              <p>
-                Solução completa de transporte e controle de peso na descarga
-                da empacotadora, que pode ser aplicada a diversos tipos de
-                produtos. As embalagens avançam com esteiras até o
-                checkweigher, que pesa cada unidade em movimento, indica na IHM
-                a aprovação ou rejeição conforme o padrão de peso configurado e
-                retira da linha os itens não conformes, sem interromper o fluxo
-                de produção.
-              </p>
-
-              <ol class="feature-steps">
-                <li>
-                  <strong>Transporte elevatório</strong>
-                  <span>Esteira modular com taliscas eleva os pacotes da descarga da empacotadora até a entrada da balança.</span>
-                </li>
-                <li>
-                  <strong>Pesagem dinâmica</strong>
-                  <span>Cada pacote é pesado individualmente em movimento, por meio de célula de carga, com leitura em tempo real.</span>
-                </li>
-                <li>
-                  <strong>Indicação de aprovação e rejeição</strong>
-                  <span>A IHM sinaliza se o peso está aprovado ou rejeitado, conforme o padrão e as tolerâncias configurados.</span>
-                </li>
-                <li>
-                  <strong>Rejeição de não conformes</strong>
-                  <span>Integração com sistema de descarte para retirar automaticamente da linha os itens rejeitados.</span>
-                </li>
-                <li>
-                  <strong>Segurança operacional</strong>
-                  <span>Painel de comando com botão de parada de emergência junto ao equipamento.</span>
-                </li>
-              </ol>
-
-              <a href="#contact" class="button glow">
-                Quero automatizar minha linha
-                <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
+          </div>
 
           <!--Galeria de fotos-->
           <h3 class="gallery-title">Mais projetos</h3>
@@ -719,7 +705,8 @@
                 Solução sob medida para a sua linha de produção.
               </p>
             </div>
-            <a href="#contact" class="button glow button-lg">
+            <!--abre o formulario de orcamento (scripts/quote.js)-->
+            <a href="#contact" class="button glow button-lg" data-open-quote>
               Solicite um orçamento
               <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -896,6 +883,7 @@
               Solicite um orçamento ou agende uma visita técnica. Retornamos o
               contato para entender a necessidade da sua empresa.
             </p>
+            <div class="contact-actions">
             <!--Link preenchido pelo scripts/config.js-->
             <a
               id="whatsapp-link"
@@ -908,10 +896,15 @@
               <i class="icon-whatsapp" aria-hidden="true"></i>
               Falar pelo WhatsApp
             </a>
+            <a href="#contact" class="button-secondary" data-open-quote>
+              <i class="icon-mail" aria-hidden="true"></i>
+              Enviar mensagem
+            </a>
+            </div>
           </div>
 
           <div class="links glass">
-            <!--Telefone e e-mail preenchidos pelo scripts/config.js-->
+            <!--Telefone preenchido pelo scripts/config.js-->
             <ul>
               <li>
                 <span class="icon-box" aria-hidden="true">
@@ -930,15 +923,6 @@
                 </span>
                 <div>
                   <h3>Telefone</h3>
-                  <a href="#contact"></a>
-                </div>
-              </li>
-              <li id="contact-email" hidden>
-                <span class="icon-box" aria-hidden="true">
-                  <i class="icon-mail"></i>
-                </span>
-                <div>
-                  <h3>E-mail</h3>
                   <a href="#contact"></a>
                 </div>
               </li>
@@ -1006,6 +990,96 @@
       </div>
     </footer>
 
+    <!--Formulario "Solicite um orcamento" (scripts/quote.js)-->
+    <dialog class="quote-modal" id="quote-modal" aria-labelledby="quote-title">
+      <form class="quote-form" novalidate>
+        <button type="button" class="quote-close" aria-label="Fechar formulário">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        <p class="eyebrow">Solicite um orçamento</p>
+        <h2 id="quote-title">Conte sobre o seu projeto</h2>
+        <p class="quote-intro">
+          Responderemos no e-mail que você informar.
+        </p>
+
+        <div class="quote-field">
+          <label for="quote-nome">Nome</label>
+          <input
+            id="quote-nome"
+            name="nome"
+            type="text"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="100"
+          />
+        </div>
+
+        <div class="quote-field">
+          <label for="quote-email">Seu e-mail</label>
+          <input
+            id="quote-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            maxlength="254"
+          />
+        </div>
+
+        <div class="quote-field">
+          <label for="quote-telefone">Telefone <span>(opcional)</span></label>
+          <input
+            id="quote-telefone"
+            name="telefone"
+            type="tel"
+            autocomplete="tel"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="quote-field">
+          <label for="quote-mensagem">Mensagem</label>
+          <textarea
+            id="quote-mensagem"
+            name="mensagem"
+            rows="5"
+            required
+            minlength="10"
+            maxlength="2000"
+            aria-describedby="quote-count"
+          ></textarea>
+          <small class="quote-count" id="quote-count">0 / 2000</small>
+        </div>
+
+        <!--isca para robos: pessoas nao veem nem preenchem-->
+        <div class="quote-hp" aria-hidden="true">
+          <label for="quote-website">Não preencha este campo</label>
+          <input
+            id="quote-website"
+            name="website"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="quote-turnstile"></div>
+
+        <p class="quote-status" role="status" aria-live="polite"></p>
+
+        <button type="submit" class="button glow quote-submit">
+          Enviar mensagem
+        </button>
+        <p class="quote-privacy">
+          Seus dados são usados apenas para responder ao seu pedido.
+        </p>
+      </form>
+    </dialog>
+
     <!--Voltar ao topo-->
     <a href="#home" class="back-to-top glass" aria-label="Voltar ao topo">
       <i class="icon-arrow-up" aria-hidden="true"></i>
@@ -1029,5 +1103,6 @@
     <script src="./scripts/doors.js" defer></script>
     <script src="./scripts/config.js" defer></script>
     <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/quote.js" defer></script>
   </body>
 </html>

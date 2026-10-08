@@ -39,7 +39,7 @@ address {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height); /*ancoras nao ficam atras do header fixo*/
-  background: var(--neutral-900);
+  background: var(--bg);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -57,8 +57,8 @@ html {
 
 body {
   font: 400 1rem/1.6 var(--body-font);
-  color: var(--neutral-200);
-  background: linear-gradient(to bottom, var(--neutral-700), var(--neutral-900));
+  color: var(--text);
+  background: var(--bg);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -70,11 +70,11 @@ body.menu-open {
 
 ::selection {
   background: var(--orange);
-  color: #ffffff;
+  color: var(--text-strong);
 }
 
 :focus-visible {
-  outline: 3px solid var(--orange);
+  outline: 3px solid var(--orange-text);
   outline-offset: 3px;
 }
 
@@ -84,11 +84,11 @@ body.menu-open {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--neutral-900);
+  background: var(--neutral-200);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--neutral-600);
+  background: var(--neutral-400);
   border-radius: 5px;
 }
 
@@ -99,11 +99,25 @@ body.menu-open {
 /*-----Variables-----*/
 
 :root {
-  /*Colors*/
-  --orange: #fbad41;
-  --orange-dark: #e59a35;
-  --orange-soft: rgba(251, 173, 65, 0.2);
-  --orange-border: rgba(251, 173, 65, 0.3);
+  /*Laranja da logomarca*/
+  --orange: #fbad41; /*botoes, icones e detalhes sobre fundo escuro*/
+  --orange-dark: #e59a35; /*hover dos botoes*/
+  --orange-strong: #c2690b; /*destaques em titulos grandes sobre fundo claro (contraste 3,6:1)*/
+  --orange-text: #b45309; /*textos pequenos em laranja sobre fundo claro (contraste 4,6:1)*/
+  --orange-soft: rgba(251, 173, 65, 0.18);
+  --orange-border: rgba(251, 173, 65, 0.45);
+
+  /*Tema claro*/
+  --bg: #f4f4f5; /*fundo do corpo, cinza bem clarinho*/
+  --surface: #ffffff; /*cards e paineis*/
+  --surface-soft: #fafafa;
+  --border: #e4e4e7;
+  --text-strong: #1c1c1c; /*titulos*/
+  --text: #404040; /*textos*/
+  --text-muted: #6b6b6b; /*textos secundarios*/
+
+  /*Topo e rodape: o cinza que antes era o fundo do corpo*/
+  --header-bg: #404040;
 
   --neutral-100: #f5f5f5;
   --neutral-200: #e5e5e5;
@@ -117,10 +131,10 @@ body.menu-open {
   --neutral-950: #0a0a0a;
   --white: #ffffff;
 
-  /*Vidro escuro*/
-  --glass-bg: rgba(23, 23, 23, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  /*Paineis (antes vidro escuro, agora cartao branco)*/
+  --glass-bg: var(--surface);
+  --glass-border: var(--border);
+  --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 
   /*Fontes*/
   --title-font: 'Outfit', sans-serif;
@@ -145,24 +159,22 @@ body.menu-open {
 }
 
 strong {
-  color: var(--orange);
+  color: var(--orange-text);
   font-weight: 600;
 }
 
 .highlight {
-  color: var(--orange);
+  color: var(--orange-strong);
 }
 
-/*Painel de vidro escuro*/
+/*Painel (cartao branco com sombra suave)*/
 .glass {
   background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
 
-/*Moldura de vidro em volta de imagem ou video*/
+/*Moldura em volta de imagem ou video*/
 .frame {
   padding: 0.75rem;
   border-radius: 1rem;
@@ -195,7 +207,7 @@ strong {
   border-radius: 50%;
   background: var(--orange-soft);
   border: 1px solid var(--orange-border);
-  color: var(--orange);
+  color: var(--orange-text);
 }
 
 .icon-box-lg {
@@ -221,9 +233,9 @@ strong {
 }
 
 .icon-box-neutral {
-  background: rgba(82, 82, 82, 0.5);
-  border-color: var(--neutral-500);
-  color: var(--neutral-100);
+  background: var(--neutral-100);
+  border-color: var(--neutral-300);
+  color: var(--text);
 }
 
 /*Botoes*/
@@ -272,9 +284,9 @@ strong {
   width: 100%;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background: var(--neutral-800);
-  border: 1px solid var(--neutral-600);
-  color: var(--orange);
+  background: var(--surface);
+  border: 1px solid var(--orange);
+  color: var(--orange-text);
   font-weight: 700;
   text-align: center;
   transition: 0.3s;
@@ -304,7 +316,7 @@ strong {
 
 .big-title {
   font: 700 2.25rem / 1.2 var(--title-font);
-  color: var(--white);
+  color: var(--text-strong);
   margin-bottom: 1.5rem;
 }
 
@@ -312,14 +324,14 @@ strong {
   font: 700 0.875rem var(--body-font);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--orange-text);
   margin-bottom: 0.75rem;
 }
 
 .lead {
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--neutral-300);
+  color: var(--text);
 }
 
 @media (min-width: 640px) {

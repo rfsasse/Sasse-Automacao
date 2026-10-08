@@ -1,0 +1,4 @@
+# segredos de teste local - nunca enviar para o GitHub
+.dev.vars
+.wrangler/
+node_modules/

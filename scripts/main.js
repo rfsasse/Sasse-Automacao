@@ -37,7 +37,6 @@ for (const link of links) {
 /*Contatos vindos do scripts/config.js*/
 
 const PHONE_PATTERN = /^55\d{10,11}$/ /*55 + DDD + 8 ou 9 digitos*/
-const EMAIL_PATTERN = /^[^\s@<>"'()]+@[^\s@<>"'()]+\.[a-z]{2,}$/i
 
 function validValue(value, pattern, name) {
   if (typeof value !== 'string' || value.trim() === '') return null
@@ -72,7 +71,6 @@ function setupContacts(config) {
 
   const whatsapp = validValue(config.whatsapp, PHONE_PATTERN, 'whatsapp')
   const phone = validValue(config.telefone, PHONE_PATTERN, 'telefone')
-  const email = validValue(config.email, EMAIL_PATTERN, 'email')
 
   if (whatsapp) {
     const message = String(config.whatsappMensagem || '').slice(0, 500)
@@ -82,10 +80,6 @@ function setupContacts(config) {
 
   if (phone) {
     showContact('contact-phone', `tel:+${phone}`, formatPhone(phone))
-  }
-
-  if (email) {
-    showContact('contact-email', `mailto:${email}`, email)
   }
 }
 
@@ -133,13 +127,13 @@ if (typeof Swiper !== 'undefined') {
           disableOnInteraction: false
         },
     pagination: {
-      el: '.swiper-pagination',
+      el: '#projects .swiper .swiper-pagination',
       clickable: true
     },
     /*setas para passar manualmente (o automatico continua depois)*/
     navigation: {
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next'
+      prevEl: document.querySelector('#projects .swiper .swiper-button-prev'),
+      nextEl: document.querySelector('#projects .swiper .swiper-button-next')
     },
     grabCursor: true, /*mostra a "mãozinha" indicando que da para arrastar*/
     a11y: {
@@ -169,6 +163,65 @@ if (typeof Swiper !== 'undefined') {
     productsCarousel.addEventListener('focusout', () => productsSwiper.autoplay.start())
   }
 }
+
+/*Projetos em destaque: no PC viram carrossel horizontal que passa sozinho;
+  no celular continuam um embaixo do outro*/
+
+const projectsCarousel = document.querySelector('.projects-carousel')
+const desktopQuery = window.matchMedia('(min-width: 1024px)')
+let projectsSwiper = null
+
+function setupProjectsCarousel() {
+  if (typeof Swiper === 'undefined' || !projectsCarousel) return
+
+  if (desktopQuery.matches && !projectsSwiper) {
+    projectsSwiper = new Swiper(projectsCarousel, {
+      wrapperClass: 'projects-track',
+      slideClass: 'feature',
+      slidesPerView: 1,
+      spaceBetween: 32,
+      /*passa sozinho a cada 8s (tempo de ler o projeto); para com o mouse em cima*/
+      autoplay: reduceMotion
+        ? false
+        : {
+            delay: 8000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false
+          },
+      navigation: {
+        prevEl: projectsCarousel.querySelector('.projects-prev'),
+        nextEl: projectsCarousel.querySelector('.projects-next')
+      },
+      pagination: {
+        el: projectsCarousel.querySelector('.projects-pagination'),
+        clickable: true
+      },
+      grabCursor: true,
+      noSwipingSelector: 'video, a, button', /*mexer no video nao arrasta o carrossel*/
+      a11y: {
+        slideRole: 'region', /*papel permitido em <article>*/
+        prevSlideMessage: 'Projeto anterior',
+        nextSlideMessage: 'Próximo projeto',
+        paginationBulletMessage: 'Ir para o projeto {{index}}'
+      }
+    })
+
+    /*contador "2 de 4 projetos"*/
+    const counter = projectsCarousel.querySelector('.projects-counter')
+    const updateCounter = () => {
+      counter.textContent = `${projectsSwiper.activeIndex + 1} de ${projectsSwiper.slides.length} projetos`
+    }
+    updateCounter()
+    projectsSwiper.on('slideChange', updateCounter)
+  } else if (!desktopQuery.matches && projectsSwiper) {
+    /*voltou para tela pequena: desfaz o carrossel*/
+    projectsSwiper.destroy(true, true)
+    projectsSwiper = null
+  }
+}
+
+setupProjectsCarousel()
+desktopQuery.addEventListener('change', setupProjectsCarousel)
 
 /*Videos que tocam so quando aparecem na tela (economiza internet)*/
 
@@ -296,7 +349,7 @@ if (typeof ScrollReveal !== 'undefined' && !reduceMotion) {
 
   scrollReveal.reveal(
     `#home .text, #home .home-media,
-    #projects .section-header, #projects .feature, #projects .swiper,
+    #projects .section-header, #projects .projects-carousel, #projects .swiper,
     .cta-banner,
     #services .services-header, #services .cards,
     #about .text, #about .founder,

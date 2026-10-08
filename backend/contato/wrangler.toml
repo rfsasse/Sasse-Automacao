@@ -1,0 +1,16 @@
+# Servidor do formulario "Solicite um orcamento" (Cloudflare Workers)
+name = "sasse-contato"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+[vars]
+# Sites que podem enviar o formulario (separados por virgula)
+ALLOWED_ORIGINS = "https://rfsasse.github.io"
+# Remetente: enquanto nao houver dominio proprio verificado na Resend, use o endereco de teste
+MAIL_FROM = "Site Sasse Automação <onboarding@resend.dev>"
+
+# Guarda o contador de envios por IP (bloqueio de 10 min)
+# Troque o id depois de criar o KV (veja README.md)
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "COLE_AQUI_O_ID_DO_KV"
